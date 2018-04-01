@@ -5,7 +5,7 @@ import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.WebDriverRunner
 import org.junit.jupiter.api.AfterEach
 
-class BaseTest {
+open class BaseTest {
 
     init {
         Configuration.browser = InitDriverProvider()::class.java.name

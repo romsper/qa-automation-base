@@ -130,7 +130,7 @@
     </dependencies>
 
     <build>
-        <testSourceDirectory>src/test/${MODE}</testSourceDirectory>
+        <testSourceDirectory>src/test/java/${MODE}</testSourceDirectory>
         <plugins>
 
             <plugin>
