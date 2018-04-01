@@ -31,7 +31,7 @@
         <allure-maven.version>2.9</allure-maven.version>
         <allure-generator.version>2.5.0</allure-generator.version>
 
-        <maven-compiler.version>3.7.0</maven-compiler.version>
+        <maven-compiler.version>3.0.7</maven-compiler.version>
         <maven-surefire.version>2.19.1</maven-surefire.version>
         <!--               -->
 
