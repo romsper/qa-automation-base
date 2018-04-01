@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outbrputEncoding>UTF-8</project.reporting.outbrputEncoding>
 
-        <selenium.version>3.9.1</selenium.version>
+        <selenium.version>3.11.0</selenium.version>
         <selenide.version>4.10.01</selenide.version>
 
         <rest-assured.version>3.0.7</rest-assured.version>
@@ -31,7 +31,7 @@
         <allure-maven.version>2.9</allure-maven.version>
         <allure-generator.version>2.5.0</allure-generator.version>
 
-        <maven-compiler.version>3.0.7</maven-compiler.version>
+        <maven-compiler.version>3.7.0</maven-compiler.version>
         <maven-surefire.version>2.19.1</maven-surefire.version>
         <!--               -->
 
