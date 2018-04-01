@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.allure/
+.idea/
+*.iml
+target/
+build/
