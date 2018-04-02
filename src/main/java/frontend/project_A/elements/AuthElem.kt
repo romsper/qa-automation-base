@@ -4,7 +4,7 @@ import com.codeborne.selenide.ElementsContainer
 import com.codeborne.selenide.Selectors.byClassName
 import com.codeborne.selenide.Selectors.byId
 import com.codeborne.selenide.Selenide.sleep
-import helpers.element
+import frontend.helpers.element
 import io.qameta.allure.Step
 
 class AuthElem : ElementsContainer() {

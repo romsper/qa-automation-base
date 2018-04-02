@@ -1,4 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
+allure-results/
+build/
 .allure/
 .idea/
 *.iml

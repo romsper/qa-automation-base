@@ -1,4 +1,4 @@
-package project_A
+package frontend.project_A
 
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.WebDriverRunner

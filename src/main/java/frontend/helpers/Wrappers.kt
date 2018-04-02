@@ -1,4 +1,4 @@
-package helpers
+package frontend.helpers
 
 import com.codeborne.selenide.ElementsCollection
 import com.codeborne.selenide.Selectors
