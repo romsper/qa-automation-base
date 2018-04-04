@@ -3,7 +3,7 @@ package main.java.helpers
 import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.WebDriverRunner
-import org.junit.jupiter.api.AfterEach
+import org.testng.annotations.AfterMethod
 
 open class BaseTest {
 
@@ -11,7 +11,7 @@ open class BaseTest {
         Configuration.browser = InitDriverProvider()::class.java.name
     }
 
-    @AfterEach
+    @AfterMethod
     fun clearCaches() {
         WebDriverRunner.clearBrowserCache()
         Selenide.clearBrowserCookies()

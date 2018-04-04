@@ -6,22 +6,19 @@ import main.java.helpers.BaseTest
 import main.java.project_A.elements.AuthElem
 import main.java.project_A.pages.AuthPage
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Tag
-import org.junit.jupiter.api.Test
+import org.testng.annotations.AfterMethod
+import org.testng.annotations.Test
 
-@Tag("auth")
+@Test(groups = ["auth"])
 class AuthTest : BaseTest() {
 
-    @AfterEach
+    @AfterMethod(alwaysRun = true)
     fun clearCache() {
         WebDriverRunner.clearBrowserCache()
         Selenide.clearBrowserCookies()
     }
 
-    @Test
-    @DisplayName("Authorization test")
+    @Test(testName = "Authorization test")
     fun badAuthTest() {
         AuthPage()
                 .open("/")
