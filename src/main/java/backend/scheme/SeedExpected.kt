@@ -1,11 +1,11 @@
-package backend.project_B.scheme
+package backend.scheme
 import com.fasterxml.jackson.annotation.JsonProperty
 
 
 
 data class SeedExample(
-		@JsonProperty("results") val results: List<Result>,
-		@JsonProperty("info") val info: Info
+        @JsonProperty("results") val results: List<Result>,
+        @JsonProperty("info") val info: Info
 )
 
 data class Info(
@@ -16,18 +16,18 @@ data class Info(
 )
 
 data class Result(
-		@JsonProperty("gender") val gender: String, //female
-		@JsonProperty("name") val name: Name,
-		@JsonProperty("location") val location: Location,
-		@JsonProperty("email") val email: String, //becky.sims@example.com
-		@JsonProperty("login") val login: Login,
-		@JsonProperty("dob") val dob: String, //1991-03-17 09:11:50
-		@JsonProperty("registered") val registered: String, //2014-04-06 03:47:45
-		@JsonProperty("phone") val phone: String, //017684 66711
-		@JsonProperty("cell") val cell: String, //0765-055-205
-		@JsonProperty("id") val id: Id,
-		@JsonProperty("picture") val picture: Picture,
-		@JsonProperty("nat") val nat: String //GB
+        @JsonProperty("gender") val gender: String, //female
+        @JsonProperty("name") val name: Name,
+        @JsonProperty("location") val location: Location,
+        @JsonProperty("email") val email: String, //becky.sims@example.com
+        @JsonProperty("login") val login: Login,
+        @JsonProperty("dob") val dob: String, //1991-03-17 09:11:50
+        @JsonProperty("registered") val registered: String, //2014-04-06 03:47:45
+        @JsonProperty("phone") val phone: String, //017684 66711
+        @JsonProperty("cell") val cell: String, //0765-055-205
+        @JsonProperty("id") val id: Id,
+        @JsonProperty("picture") val picture: Picture,
+        @JsonProperty("nat") val nat: String //GB
 )
 
 data class Name(

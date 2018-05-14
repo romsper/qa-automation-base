@@ -1,9 +1,9 @@
-package frontend.project_A
+package frontend
 
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.WebDriverRunner
-import main.java.helpers.BaseTest
-import main.java.project_A.elements.AuthElem
+import frontend.helpers.BaseTest
+import frontend.elements.AuthElem
 import main.java.project_A.pages.AuthPage
 import org.assertj.core.api.Assertions.assertThat
 import org.testng.annotations.AfterMethod

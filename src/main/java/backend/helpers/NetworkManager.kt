@@ -8,66 +8,64 @@ import io.restassured.specification.RequestSpecification
 
 class NetworkManager {
     companion object {
-        val host = System.getProperty("HOST")
-        val protocol = System.getProperty("PROTOCOL")
-        val apiVersion = System.getProperty("API_VERSION")
+        val ENDPOINT_URL =
+                if (System.getProperty("API_URL").isNullOrEmpty()) "https://randomuser.me/api"
+                else System.getProperty("API_URL")
+    }
 
-        val apiUrl = "${protocol}${host}${apiVersion}"
+    @Step("Выполнение POST запроса и извлечение ответа как Класс")
+    fun <T> extractPost(spec: RequestSpecification, responseClass: Class<T>, requestBody: Any): T {
+        return given()
+                .spec(spec)
+                .filter(AllureRestAssured())
+                .body(requestBody)
+                .post()
+                .then()
+                .extract().`as`(responseClass)
+    }
 
-        @Step("Выполнение POST запроса")
-        fun <T> responsePost(spec: RequestSpecification, responseClass: Class<T>, requestBody: Any): T {
-            return given()
-                    .spec(spec)
-                    .filter(AllureRestAssured())
-                    .body(requestBody)
-                    .post()
-                    .then()
-                    .extract().`as`(responseClass)
-        }
+    @Step("Выполнение GET запроса и извлечение ответа как Класс")
+    fun <T> extractGet(url: String?, responseClass: Class<T>?): T {
+        return given()
+                .`when`()
+                .filter(AllureRestAssured())
+                .urlEncodingEnabled(false)
+                .get(url)
+                .then()
+                .extract().`as`(responseClass)
+    }
 
-        @Step("Выполнение GET запроса")
-        fun <T> responseGet(url: String?, responseClass: Class<T>?): T {
-            return given()
-                    .`when`()
-                    .filter(AllureRestAssured())
-                    .urlEncodingEnabled(false)
-                    .get(url)
-                    .then()
-                    .extract().`as`(responseClass)
-        }
+    @Step("Выполнение PATCH запроса и извлечение ответа как Класс")
+    fun <T> executePatch(url: String, requestBody: Any, responseClass: Class<T>): T {
+        return given()
+                .`when`()
+                .body(requestBody)
+                .urlEncodingEnabled(false)
+                .patch(url)
+                .then()
+                .extract().`as`(responseClass)
+    }
 
-        @Step("Выполнение GET запроса")
-        fun executeGet(url: String): Response {
-            return given()
-                    .`when`()
-                    .filter(AllureRestAssured())
-                    .urlEncodingEnabled(false)
-                    .get(url)
-                    .then()
-                    .extract()
-                    .response()
-        }
+    @Step("Выполнение GET запроса")
+    fun executeGet(url: String): Response {
+        return given()
+                .`when`()
+                .filter(AllureRestAssured())
+                .urlEncodingEnabled(false)
+                .get(url)
+                .then()
+                .extract()
+                .response()
+    }
 
-        @Step("Выполнение POST запроса")
-        fun executePost(spec: RequestSpecification?, url: String?, requestBody: Any): Response {
-            return given()
-                    .spec(spec)
-                    .body(requestBody)
-                    .post(url)
-                    .then()
-                    .extract()
-                    .response()
-        }
-
-        @Step("Выполнение PATCH запроса")
-        fun <T> executePatchCallTracking(url: String, requestBody: Any, responseClass: Class<T>): T {
-            return given()
-                    .`when`()
-                    .body(requestBody)
-                    .urlEncodingEnabled(false)
-                    .patch(url)
-                    .then()
-                    .extract().`as`(responseClass)
-        }
+    @Step("Выполнение POST запроса")
+    fun executePost(spec: RequestSpecification?, url: String?, requestBody: Any): Response {
+        return given()
+                .spec(spec)
+                .body(requestBody)
+                .post(url)
+                .then()
+                .extract()
+                .response()
     }
 }

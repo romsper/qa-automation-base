@@ -1,4 +1,4 @@
-package main.java.listeners
+package listeners
 
 import org.testng.ITestContext
 import org.testng.ITestListener
@@ -6,31 +6,32 @@ import org.testng.ITestResult
 import org.slf4j.LoggerFactory
 
 open class EventListener : ITestListener {
-    val logger = LoggerFactory.getLogger(EventListener::class.java)
 
-    override fun onTestStart(result: ITestResult?) {
-        logger.info("Start test " + result!!.name)
-    }
-
-    override fun onFinish(context: ITestContext?) {
-        logger.info("Stop test " + context!!.name)
+    override fun onTestStart(result: ITestResult) {
+        println("Start: " + result.name)
     }
 
     override fun onTestSkipped(result: ITestResult) {
-        logger.info("Skip test " + result!!.name)
+        println("Skipped: " + result.name)
     }
 
     override fun onTestSuccess(result: ITestResult) {
-        logger.info("Success test " + result!!.name)
+        println("Success: " + result.name)
     }
 
     override fun onTestFailure(result: ITestResult) {
-        logger.info("Failure test " + result!!.name)
+        println("Failure: " + result.name)
     }
 
     override fun onTestFailedButWithinSuccessPercentage(result: ITestResult) {
+        println("Broken: " + result.name)
     }
 
     override fun onStart(result: ITestContext?) {
+        println("-------------- START --------------")
+    }
+
+    override fun onFinish(context: ITestContext?) {
+        println("-------------- FINISH --------------")
     }
 }

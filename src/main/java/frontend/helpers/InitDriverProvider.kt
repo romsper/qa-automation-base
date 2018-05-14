@@ -1,4 +1,4 @@
-package main.java.helpers
+package frontend.helpers
 
 import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.WebDriverProvider

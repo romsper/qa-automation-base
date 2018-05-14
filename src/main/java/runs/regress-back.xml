@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="regress-back">
     <listeners>
-        <listener class-name="main.java.listeners.RetryListener" />
-        <listener class-name="main.java.listeners.EventListener" />
+        <listener class-name="listeners.RetryListener" />
+        <listener class-name="listeners.EventListener" />
     </listeners>
     <test name="Regression for Backend" >
         <groups>

@@ -1,4 +1,4 @@
-package main.java.project_A.elements
+package frontend.elements
 
 import com.codeborne.selenide.ElementsContainer
 import com.codeborne.selenide.Selectors.byClassName
