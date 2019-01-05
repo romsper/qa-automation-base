@@ -1,4 +1,4 @@
-package main.java.backend.helpers
+package backend.helpers
 
 import io.qameta.allure.Step
 import io.qameta.allure.restassured.AllureRestAssured
@@ -7,13 +7,9 @@ import io.restassured.response.Response
 import io.restassured.specification.RequestSpecification
 
 class NetworkManager {
-    companion object {
-        val ENDPOINT_URL =
-                if (System.getProperty("API_URL").isNullOrEmpty()) "https://randomuser.me/api"
-                else System.getProperty("API_URL")
-    }
+    val spec = Specs()
 
-    @Step("Выполнение POST запроса и извлечение ответа как Класс")
+    @Step("Execute POST and extract body as object")
     fun <T> extractPost(spec: RequestSpecification, responseClass: Class<T>, requestBody: Any): T {
         return given()
                 .spec(spec)
@@ -24,18 +20,19 @@ class NetworkManager {
                 .extract().`as`(responseClass)
     }
 
-    @Step("Выполнение GET запроса и извлечение ответа как Класс")
-    fun <T> extractGet(url: String?, responseClass: Class<T>?): T {
+    @Step("Execute GET and extract body as object")
+    fun <T> extractGet(url: String, responseClass: Class<T>?): T {
         return given()
+                .spec(spec.specDefault(url))
                 .`when`()
                 .filter(AllureRestAssured())
                 .urlEncodingEnabled(false)
-                .get(url)
+                .get()
                 .then()
                 .extract().`as`(responseClass)
     }
 
-    @Step("Выполнение PATCH запроса и извлечение ответа как Класс")
+    @Step("Execute PATCH and extract body as object")
     fun <T> executePatch(url: String, requestBody: Any, responseClass: Class<T>): T {
         return given()
                 .`when`()
@@ -46,19 +43,20 @@ class NetworkManager {
                 .extract().`as`(responseClass)
     }
 
-    @Step("Выполнение GET запроса")
+    @Step("Execute GET")
     fun executeGet(url: String): Response {
         return given()
+                .spec(spec.specDefault(url))
                 .`when`()
                 .filter(AllureRestAssured())
                 .urlEncodingEnabled(false)
-                .get(url)
+                .get()
                 .then()
                 .extract()
                 .response()
     }
 
-    @Step("Выполнение POST запроса")
+    @Step("Execute POST")
     fun executePost(spec: RequestSpecification?, url: String?, requestBody: Any): Response {
         return given()
                 .spec(spec)

@@ -11,8 +11,8 @@ class AuthElem : ElementsContainer() {
 
     @Step("Type Login and Pass")
     fun typeLoginAndPass(email: String, pass: String): AuthElem {
-        element(byId("index_email")).setValue(email)
-        element(byId("index_pass")).setValue(pass)
+        element(byId("index_email")).value = email
+        element(byId("index_pass")).value = pass
         return this
     }
 
