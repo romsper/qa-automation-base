@@ -1,24 +1,28 @@
-package frontend
+package test.frontend
 
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.WebDriverRunner
-import frontend.helpers.BaseTest
-import frontend.elements.AuthElem
-import main.java.project_A.pages.AuthPage
+import main.frontend.helpers.BaseTest
+import main.frontend.elements.AuthElem
+import io.qameta.allure.Feature
+import io.qameta.allure.Story
+import main.frontend.pages.AuthPage
 import org.assertj.core.api.Assertions.assertThat
-import org.testng.annotations.AfterMethod
-import org.testng.annotations.Test
+import org.junit.jupiter.api.*
 
-@Test(groups = ["auth"])
+@Feature("Authorization")
+@Story("Authorization")
+@Tags(Tag("auth"), Tag("regress"))
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AuthTest : BaseTest() {
 
-    @AfterMethod(alwaysRun = true)
+    @AfterEach
     fun clearCache() {
         WebDriverRunner.clearBrowserCache()
         Selenide.clearBrowserCookies()
     }
 
-    @Test(testName = "Authorization test")
+    @Test
     fun badAuthTest() {
         AuthPage()
                 .open("/")
