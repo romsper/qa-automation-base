@@ -1,0 +1,25 @@
+{
+  "name": "test-js",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Roman",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "tests": "tests"
+  },
+  "scripts": {
+    "pretest": "rm -rf allure-results",
+    "test": "npm-run-all -r -p test:*",
+    "test:mocha": "sleep 1 && multi='progress=- mocha-allure-reporter=-' mocha",
+    "report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.8.1",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "mocha-multi": "^1.0.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
