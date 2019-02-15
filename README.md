@@ -2,21 +2,9 @@
 
 ##### Description
 
-This project contains a few automation base projects which were written by Kotlin and JS.
+This repository contains a few automation base projects which were written by **Kotlin** and **JavaScript**. All projects contains **Allure** also **Kotlin** projects contains examples with **Selenide**
 
-Projects were written by **Kotlin** contains:
-  - **Allure**
-  - **AssertJ**
-  - **Selenide**
-
-Project was written by **JS** contains:
-  - **Allure**
-  - **Mocha**
-  - **Chai**
-
-##### Branch
-
-Just select the desired branch 
+##### Branches
 
   - [kotlin-testng-rest-assured](https://github.com/romsper/qa-automation-bases/tree/kotlin-testng-rest-assured)
   - [kotlin-junit5-retrofit](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-retrofit)
@@ -35,6 +23,6 @@ How to use it for **Grafana**:
   - Install **Grafana** (use **Docker**)
   - Integrate **InfluxDB** to **Grafana**
   - Send the report to **InfluxDB** by 
-  `$ curl -XPOST 'http://<host>/write?db=<db name>' --data-binary @allure-report/export/influxDbData.txt`
+  - `$ curl -XPOST 'http://<host>/write?db=<db name>' --data-binary @allure-report/export/influxDbData.txt`
   - Check **Grafana** 
-  ***PROFIT***
+  - ***PROFIT***
