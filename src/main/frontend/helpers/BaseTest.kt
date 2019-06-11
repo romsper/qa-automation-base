@@ -12,7 +12,7 @@ open class BaseTest {
     }
 
     @AfterEach
-    fun clearCaches() {
+    fun clearCache() {
         WebDriverRunner.clearBrowserCache()
         Selenide.clearBrowserCookies()
     }

@@ -8,6 +8,13 @@
     <artifactId>qa-automation-bases</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <repositories>
+        <repository>
+            <id>icm-repo</id>
+            <url>http://maven.icm.edu.pl/artifactory/repo/</url>
+        </repository>
+    </repositories>
+
     <properties>
 
         <!--General-->
@@ -15,29 +22,29 @@
         <project.reporting.outbrputEncoding>UTF-8</project.reporting.outbrputEncoding>
 
         <java.version>1.8</java.version>
-        <kotlin.version>1.3.20</kotlin.version>
+        <kotlin.version>1.3.31</kotlin.version>
 
-        <retrofit.version>2.5.0</retrofit.version>
-        <okhttp.version>3.12.0</okhttp.version>
+        <retrofit.version>2.6.0</retrofit.version>
+        <okhttp.version>3.14.2</okhttp.version>
         <gson.version>2.8.5</gson.version>
-        <gson-converter.version>2.5.0</gson-converter.version>
+        <gson-converter.version>2.6.0</gson-converter.version>
 
-        <selenium.version>3.11.0</selenium.version>
-        <selenide.version>4.10.01</selenide.version>
+        <selenium.version>3.141.59</selenium.version>
+        <selenide.version>5.2.3</selenide.version>
 
-        <assertj.version>3.11.1</assertj.version>
-        <aspectj.version>1.8.13</aspectj.version>
+        <assertj.version>3.12.2</assertj.version>
+        <aspectj.version>1.9.4</aspectj.version>
         <properties.version>1.6</properties.version>
 
-        <junit.jupiter.version>5.3.2</junit.jupiter.version>
-        <junit.platform.version>1.3.1</junit.platform.version>
+        <junit.jupiter.version>5.4.2</junit.jupiter.version>
+        <junit.platform.version>1.4.2</junit.platform.version>
 
-        <allure-junit5.version>2.8.1</allure-junit5.version>
-        <allure-maven.version>2.9</allure-maven.version>
-        <allure-generator.version>2.8.1</allure-generator.version>
+        <allure-junit5.version>2.12.1</allure-junit5.version>
+        <allure-maven.version>2.10.0</allure-maven.version>
+        <allure-generator.version>2.12.1</allure-generator.version>
 
-        <maven-compiler.version>3.8.0</maven-compiler.version>
-        <maven-surefire.version>2.22.1</maven-surefire.version>
+        <maven-compiler.version>3.8.1</maven-compiler.version>
+        <maven-surefire.version>2.22.2</maven-surefire.version>
         <!--               -->
 
     </properties>
@@ -264,11 +271,11 @@
                         <artifactId>aspectjweaver</artifactId>
                         <version>${aspectj.version}</version>
                     </dependency>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>${junit.platform.version}</version>
-                    </dependency>
+<!--                    <dependency>-->
+<!--                        <groupId>org.junit.platform</groupId>-->
+<!--                        <artifactId>junit-platform-surefire-provider</artifactId>-->
+<!--                        <version>${junit.platform.version}</version>-->
+<!--                    </dependency>-->
                     <dependency>
                         <groupId>org.junit.jupiter</groupId>
                         <artifactId>junit-jupiter-engine</artifactId>

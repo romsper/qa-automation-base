@@ -13,7 +13,7 @@ open class InitDriverProvider : WebDriverProvider {
 
     override fun createDriver(capabilities: DesiredCapabilities): RemoteWebDriver {
         val chromeOptions = ChromeOptions()
-        chromeOptions.setCapability("version", "65")
+        chromeOptions.setCapability("version", "75")
         chromeOptions.setCapability("enableVNC", true)
 
         return RemoteWebDriver(URL("http://$HUB_URL:4444/wd/hub"), chromeOptions)
@@ -22,7 +22,7 @@ open class InitDriverProvider : WebDriverProvider {
     init {
         Configuration.baseUrl = "https://vk.com"
         Configuration.browserSize = "1920x1080"
-        Configuration.collectionsTimeout = 15000
+        Configuration.timeout = 15000
         Configuration.reopenBrowserOnFail = true
     }
 }

@@ -1,7 +1,5 @@
 package test.frontend
 
-import com.codeborne.selenide.Selenide
-import com.codeborne.selenide.WebDriverRunner
 import main.frontend.helpers.BaseTest
 import main.frontend.elements.AuthElem
 import io.qameta.allure.Feature
@@ -16,12 +14,6 @@ import org.junit.jupiter.api.*
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AuthTest : BaseTest() {
 
-    @AfterEach
-    fun clearCache() {
-        WebDriverRunner.clearBrowserCache()
-        Selenide.clearBrowserCookies()
-    }
-
     @Test
     fun badAuthTest() {
         AuthPage()
@@ -29,6 +21,7 @@ class AuthTest : BaseTest() {
                 .authElem()
                 .typeLoginAndPass(email = "asd@asd.com", pass = "asdfg123")
                 .submitClick()
+
         assertThat(AuthElem().errorMsgIsDisplayed()).isTrue()
     }
 }
