@@ -21,6 +21,6 @@ class SomeTest : TestBase() {
     fun checkSeed() {
         val seed = network.extractGet(url = Endpoints.SEED.hand, responseClass = SeedExample::class.java)
 
-        assertThat(seed.results[0].name.first).isEqualTo("becky")
+        assertThat(seed.results.get(0).name.first).isEqualTo("becky")
     }
 }

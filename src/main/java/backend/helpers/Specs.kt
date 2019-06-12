@@ -6,9 +6,7 @@ import io.restassured.specification.RequestSpecification
 
 class Specs {
     companion object {
-        val ENDPOINT_URL =
-                if (System.getProperty("API_URL").isNullOrEmpty()) "https://randomuser.me/api"
-                else System.getProperty("API_URL")
+        val ENDPOINT_URL = System.getProperty("API_URL").let { "https://randomuser.me/api" }
     }
 
     @Step("SPEC without Token")

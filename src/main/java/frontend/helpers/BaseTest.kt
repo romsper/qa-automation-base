@@ -11,8 +11,8 @@ open class BaseTest {
         Configuration.browser = InitDriverProvider()::class.java.name
     }
 
-    @AfterMethod
-    fun clearCaches() {
+    @AfterMethod(alwaysRun = true)
+    fun clearCache() {
         WebDriverRunner.clearBrowserCache()
         Selenide.clearBrowserCookies()
     }
