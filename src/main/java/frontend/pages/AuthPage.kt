@@ -2,8 +2,8 @@ package main.java.project_A.pages
 
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.sleep
-import io.qameta.allure.Step
 import frontend.elements.AuthElem
+import io.qameta.allure.Step
 
 class AuthPage {
 
