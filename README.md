@@ -26,3 +26,14 @@ How to use it for **Grafana**:
   - `$ curl -XPOST 'http://<host>/write?db=<db name>' --data-binary @allure-report/export/influxDbData.txt`
   - Check **Grafana** 
   - ***PROFIT***
+
+
+
+### Selenoid
+
+**Selenoid** is a **Browsers farm** (like **Selenium Grid**) for automation testing which runs in a **Docker** and has **UI** interface with **StackTrace** and **VNC**. 
+
+Distribute this tool to Docker is really easy - just use **3 commands** in **Terminal**:
+  - Install **Selenoid** by `curl -s https://aerokube.com/cm/bash | bash \ && ./cm selenoid start --vnc`
+  - Install **Selenoid UI** by `./cm selenoid-ui start --port 8080`
+  - For **update** this **browsers** just use `./cm selenoid update`
