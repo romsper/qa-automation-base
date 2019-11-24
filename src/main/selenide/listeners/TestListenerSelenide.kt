@@ -1,11 +1,11 @@
-package main.backend.listeners
+package main.appium.listeners
 
 import org.junit.platform.engine.TestExecutionResult
 import org.junit.platform.launcher.TestExecutionListener
 import org.junit.platform.launcher.TestIdentifier
 import org.junit.platform.launcher.TestPlan
 
-class TestListener : TestExecutionListener {
+class TestListenerSelenide : TestExecutionListener {
 
     override fun testPlanExecutionStarted(testPlan: TestPlan?) {
         println("|----- START -----|\n")
