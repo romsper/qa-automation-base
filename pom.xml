@@ -13,6 +13,10 @@
             <id>icm-repo</id>
             <url>http://maven.icm.edu.pl/artifactory/repo/</url>
         </repository>
+        <repository>
+            <id>io.qameta.allure</id>
+            <url>https://dl.bintray.com/qameta/maven-unstable/</url>
+        </repository>
     </repositories>
 
     <properties>
@@ -22,10 +26,12 @@
         <project.reporting.outbrputEncoding>UTF-8</project.reporting.outbrputEncoding>
 
         <java.version>1.8</java.version>
-        <kotlin.version>1.3.60</kotlin.version>
+        <kotlin.version>1.3.61</kotlin.version>
+        <retrofit.version>2.7.1</retrofit.version>
 
         <selenium.version>3.141.59</selenium.version>
-        <selenide.version>5.5.0</selenide.version>
+        <selenide.version>5.7.0</selenide.version>
+        <appium.version>7.3.0</appium.version>
 
         <assertj.version>3.14.0</assertj.version>
         <aspectj.version>1.9.4</aspectj.version>
@@ -34,15 +40,55 @@
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <junit.platform.version>1.5.2</junit.platform.version>
 
-        <allure-junit5.version>2.13.0</allure-junit5.version>
+        <allure-junit5.version>2.13.1</allure-junit5.version>
         <allure-maven.version>2.10.0</allure-maven.version>
         <allure-generator.version>2.13.0</allure-generator.version>
 
         <maven-compiler.version>3.8.1</maven-compiler.version>
-        <maven-surefire.version>2.22.2</maven-surefire.version>
+        <maven-surefire.version>3.0.0-M4</maven-surefire.version>
+        <!--               -->
+
+        <!--    Jenkins    -->
+
+        <platform></platform>
+        <device.name></device.name>
+
+        <android.version></android.version>
+        <apk.path></apk.path>
+
+        <app.path></app.path>
+        <device.udid></device.udid>
+        <ios.version></ios.version>
+
         <!--               -->
 
     </properties>
+
+    <profiles>
+        <profile>
+            <id>jenkins-android</id>
+            <properties>
+                <platform>Android</platform>
+                <android.version>10</android.version>
+                <apk.path>
+                    ${HOME}/.jenkins/workspace/skyecc-android-app/app/build/outputs/apk/dev/debug/app-dev-debug.apk
+                </apk.path>
+                <device.name>Pixel</device.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>jenkins-ios</id>
+            <properties>
+                <platform>iOS</platform>
+                <app.path>
+                    ${HOME}/.jenkins/workspace/skyecc-ios-app/build/Debug-iphoneos/SkyECC.ipa/Payload/SkyECC-v2.app
+                </app.path>
+                <device.name>iPhone</device.name>
+                <device.udid>39FD7282-CB6F-476B-B37F-C7E5957ED814</device.udid>
+                <ios.version>13.2.2</ios.version>
+            </properties>
+        </profile>
+    </profiles>
 
     <dependencies>
 
@@ -54,14 +100,26 @@
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-reflect</artifactId>
             <version>${kotlin.version}</version>
+        </dependency>
+        <!--               -->
+
+        <!--Backend-->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>retrofit</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-gson</artifactId>
+            <version>${retrofit.version}</version>
         </dependency>
         <!--               -->
 
@@ -79,7 +137,7 @@
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>7.3.0</version>
+            <version>${appium.version}</version>
         </dependency>
         <!--               -->
 
@@ -144,8 +202,18 @@
 
         <!--Reporting-->
         <dependency>
+            <groupId>com.codepine.api</groupId>
+            <artifactId>testrail-api-java-client</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
+            <version>${allure-junit5.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
             <version>${allure-junit5.version}</version>
         </dependency>
         <dependency>
@@ -157,6 +225,26 @@
             <groupId>org.apache.maven.surefire</groupId>
             <artifactId>surefire-logger-api</artifactId>
             <version>${maven-surefire.version}</version>
+        </dependency>
+
+        <!--Allure EE-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-ee-client</artifactId>
+            <version>3.25.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-ee-commandline</artifactId>
+            <version>3.25.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-ee-junit-platform</artifactId>
+            <version>3.25.0</version>
+            <type>pom</type>
         </dependency>
         <!--               -->
 
@@ -214,7 +302,7 @@
                 <configuration>
                     <trimStackTrace>false</trimStackTrace>
                     <properties>
-                        <includeTags>${TAG}</includeTags>
+                        <groups>${TAG}</groups>
                     </properties>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
@@ -224,6 +312,36 @@
                             <name>allure.results.directory</name>
                             <value>${project.build.directory}/allure-results</value>
                         </property>
+
+                        <property>
+                            <name>platform</name>
+                            <value>${platform}</value>
+                        </property>
+                        <property>
+                            <name>device.name</name>
+                            <value>${device.name}</value>
+                        </property>
+                        <property>
+                            <name>android.version</name>
+                            <value>${android.version}</value>
+                        </property>
+                        <property>
+                            <name>apk.path</name>
+                            <value>${apk.path}</value>
+                        </property>
+                        <property>
+                            <name>app.path</name>
+                            <value>${app.path}</value>
+                        </property>
+                        <property>
+                            <name>device.udid</name>
+                            <value>${device.udid}</value>
+                        </property>
+                        <property>
+                            <name>ios.version</name>
+                            <value>${ios.version}</value>
+                        </property>
+
                     </systemProperties>
                 </configuration>
                 <dependencies>
@@ -232,11 +350,6 @@
                         <artifactId>aspectjweaver</artifactId>
                         <version>${aspectj.version}</version>
                     </dependency>
-<!--                    <dependency>-->
-<!--                        <groupId>org.junit.platform</groupId>-->
-<!--                        <artifactId>junit-platform-surefire-provider</artifactId>-->
-<!--                        <version>${junit.platform.version}</version>-->
-<!--                    </dependency>-->
                     <dependency>
                         <groupId>org.junit.jupiter</groupId>
                         <artifactId>junit-jupiter-engine</artifactId>
