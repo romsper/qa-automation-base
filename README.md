@@ -2,15 +2,14 @@
 
 ##### Description
 
-This repository contains a few automation base projects which were written by **Kotlin** and **JavaScript**. All projects contains **Allure** also **Kotlin** projects contains examples with **Selenide**
+This repository contains a few automation base projects which were written by **Kotlin** and **JavaScript**. All projects contains **Allure** and **Kotlin** projects contain examples with **Selenide**. I use **Selenoid** in Docker as the browser farm! 
 
 ##### Branches
 
-  - [kotlin-testng-rest-assured](https://github.com/romsper/qa-automation-bases/tree/kotlin-testng-rest-assured)
-  - [kotlin-junit5-retrofit](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-retrofit)
-  - [kotlin-junit5-appium](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-appium)
-(Kotlin + Selenide/Appium + JUnit 5 + Allure + Allure EE + TestRail)
-  - [js-mocha-chai](https://github.com/romsper/qa-automation-bases/tree/js-mocha-chai)
+  - [kotlin-testng-rest-assured](https://github.com/romsper/qa-automation-bases/tree/kotlin-testng-rest-assured) - Kotlin | Rest-Assured | Selenide | TestNG | Allure
+  - [kotlin-junit5-retrofit](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-retrofit) - Kotlin | Retrofit | Selenide | JUnit 5 | Allure
+  - [kotlin-junit5-appium](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-appium) - Kotlin | Selenide/Appium | JUnit 5 | Allure | Allure EE | TestRail
+  - [js-mocha-chai](https://github.com/romsper/qa-automation-bases/tree/js-mocha-chai) - JS | Mocha | Chai | Allure
   
   
   
