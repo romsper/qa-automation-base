@@ -1,0 +1,8 @@
+README.rst
+setup.py
+python_pytest/__init__.py
+python_pytest.egg-info/PKG-INFO
+python_pytest.egg-info/SOURCES.txt
+python_pytest.egg-info/dependency_links.txt
+python_pytest.egg-info/requires.txt
+python_pytest.egg-info/top_level.txt

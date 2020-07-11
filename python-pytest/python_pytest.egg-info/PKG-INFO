@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: python-pytest
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Roman Speranskii
+Author-email: r.speranskii@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.8.3,<4.0.0
