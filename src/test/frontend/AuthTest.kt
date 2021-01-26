@@ -14,12 +14,10 @@ import org.junit.jupiter.params.provider.ValueSource
 @Tags(Tag("auth"), Tag("regress"))
 class AuthTest : BaseTest() {
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Negative -> Check email validation {0}")
     @ValueSource(strings = ["asd@asd.com", "asd"])
     @Severity(SeverityLevel.BLOCKER)
-    @Issue("JIRA-123")
-    @TmsLink("TR-15")
-    @DisplayName("Negative -> Check email validation {0}")
+    @Issue("JIRA-123") @TmsLink("TR-15")
     fun badAuthTest(email: String) {
         AuthPage()
                 .authElem()
