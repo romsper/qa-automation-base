@@ -1,25 +1,43 @@
 package test.backend
 
-import io.qameta.allure.Feature
-import io.qameta.allure.Story
-import main.backend.base.TestBase
-import main.backend.helpers.getAsObject
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Tag
-import org.junit.jupiter.api.Tags
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.TestInstance
+import io.kotest.matchers.ints.shouldBeGreaterThanOrEqual
+import io.kotest.matchers.string.shouldContain
+import io.kotest.matchers.string.shouldNotBeBlank
+import io.qameta.allure.*
+import main.backend.extention.Functions.Companion.getAsObject
+import main.backend.extention.Functions.Companion.getErrorBody
+import main.backend.extention.Functions.Companion.jsonToObject
+import main.backend.interfaces.IUsers
+import main.backend.pojo.ExampleName
+import org.junit.jupiter.api.*
+
+//TODO Keep in mind that it's just an example ;)
 
 @Feature("User")
 @Story("getUsers")
 @Tags(Tag("user"), Tag("regress"))
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class UserTest : TestBase() {
+class UserTest : IUsers {
 
     @Test
-    fun checkUser() {
-        val user = userBase.getUsers().getAsObject()
+    @Severity(SeverityLevel.BLOCKER)
+    @Issue("JIRA-123")
+    @TmsLink("TR-15")
+    @DisplayName("Positive -> Get users list")
+    fun checkUserPositive() {
+        val user = user.getUsers().getAsObject()
 
-        assertThat(user.results!!.first()!!.id).isNotNull
+        user.results.first().id.value.shouldNotBeBlank()
+        user.results.size.shouldBeGreaterThanOrEqual(1)
+    }
+
+    @Test
+    @Severity(SeverityLevel.BLOCKER)
+    @Issue("JIRA-123")
+    @TmsLink("TR-15")
+    @DisplayName("Negative -> Get users list")
+    fun checkUserNegative() {
+        val error = user.getUsers().getErrorBody().jsonToObject(ExampleName::class.java)
+
+        error.first.shouldContain("Error")
     }
 }

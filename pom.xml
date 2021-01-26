@@ -20,31 +20,32 @@
         <!--General-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outbrputEncoding>UTF-8</project.reporting.outbrputEncoding>
+        <kotlin.code.style>official</kotlin.code.style>
 
         <java.version>1.8</java.version>
-        <kotlin.version>1.3.31</kotlin.version>
+        <kotlin.version>1.4.21</kotlin.version>
 
-        <retrofit.version>2.6.0</retrofit.version>
-        <okhttp.version>3.14.2</okhttp.version>
-        <gson.version>2.8.5</gson.version>
-        <gson-converter.version>2.6.0</gson-converter.version>
+        <retrofit.version>2.9.0</retrofit.version>
+        <okhttp.version>3.14.9</okhttp.version>
+        <gson.version>2.8.6</gson.version>
+        <gson-converter.version>2.9.0</gson-converter.version>
 
-        <selenium.version>3.141.59</selenium.version>
-        <selenide.version>5.2.3</selenide.version>
+        <selenide.version>5.17.2</selenide.version>
+        <browserup.version>2.1.2</browserup.version>
 
-        <assertj.version>3.12.2</assertj.version>
-        <aspectj.version>1.9.4</aspectj.version>
-        <properties.version>1.6</properties.version>
+        <aspectj.version>1.9.6</aspectj.version>
 
-        <junit.jupiter.version>5.4.2</junit.jupiter.version>
-        <junit.platform.version>1.4.2</junit.platform.version>
+        <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <junit.platform.version>1.7.0</junit.platform.version>
+        <kotest.version>4.2.6</kotest.version>
 
-        <allure-junit5.version>2.12.1</allure-junit5.version>
+        <allure-junit5.version>2.13.8</allure-junit5.version>
         <allure-maven.version>2.10.0</allure-maven.version>
-        <allure-generator.version>2.12.1</allure-generator.version>
+        <allure-generator.version>2.13.8</allure-generator.version>
+        <slf4j.version>1.7.25</slf4j.version>
 
         <maven-compiler.version>3.8.1</maven-compiler.version>
-        <maven-surefire.version>2.22.2</maven-surefire.version>
+        <maven-surefire.version>3.0.0-M4</maven-surefire.version>
         <!--               -->
 
     </properties>
@@ -54,14 +55,13 @@
         <!--Kotlin-->
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib</artifactId>
+            <artifactId>kotlin-test-junit5</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test</artifactId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -72,14 +72,23 @@
 
         <!--UI testing-->
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <version>${selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <!--               -->
+
+        <!--Proxy-->
+        <dependency>
+            <groupId>com.browserup</groupId>
+            <artifactId>browserup-proxy-core</artifactId>
+            <version>${browserup.version}</version>
         </dependency>
         <!--               -->
 
@@ -103,17 +112,6 @@
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>converter-gson</artifactId>
             <version>${gson-converter.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.5</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-dbutils</groupId>
-            <artifactId>commons-dbutils</artifactId>
-            <version>1.7</version>
         </dependency>
         <!--               -->
 
@@ -165,14 +163,14 @@
 
         <!--Matcher-->
         <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${assertj.version}</version>
+            <groupId>io.kotest</groupId>
+            <artifactId>kotest-assertions-core-jvm</artifactId>
+            <version>${kotest.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.jayway.jsonpath</groupId>
-            <artifactId>json-path</artifactId>
-            <version>2.4.0</version>
+            <groupId>io.kotest</groupId>
+            <artifactId>kotest-assertions-json-jvm</artifactId>
+            <version>${kotest.version}</version>
         </dependency>
         <!--               -->
 
@@ -186,11 +184,6 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-okhttp3</artifactId>
             <version>${allure-junit5.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>ru.yandex.qatools.properties</groupId>
-            <artifactId>properties-loader</artifactId>
-            <version>${properties.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.surefire</groupId>

@@ -1,27 +1,31 @@
 package test.frontend
 
+import io.kotest.matchers.booleans.shouldBeTrue
+import io.qameta.allure.*
 import main.frontend.helpers.BaseTest
 import main.frontend.elements.AuthElem
-import io.qameta.allure.Feature
-import io.qameta.allure.Story
 import main.frontend.pages.AuthPage
-import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.*
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
 
 @Feature("Authorization")
 @Story("Authorization")
 @Tags(Tag("auth"), Tag("regress"))
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AuthTest : BaseTest() {
 
-    @Test
-    fun badAuthTest() {
+    @ParameterizedTest
+    @ValueSource(strings = ["asd@asd.com", "asd"])
+    @Severity(SeverityLevel.BLOCKER)
+    @Issue("JIRA-123")
+    @TmsLink("TR-15")
+    @DisplayName("Negative -> Check email validation {0}")
+    fun badAuthTest(email: String) {
         AuthPage()
-                .open("/")
                 .authElem()
-                .typeLoginAndPass(email = "asd@asd.com", pass = "asdfg123")
+                .typeLoginAndPass(email = email, pass = "asdfg123")
                 .submitClick()
 
-        assertThat(AuthElem().errorMsgIsDisplayed()).isTrue()
+        AuthElem().errorMsgIsDisplayed().shouldBeTrue()
     }
 }

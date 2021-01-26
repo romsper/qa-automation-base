@@ -1,10 +1,9 @@
 package main.backend.base
 
 import main.backend.api.UserApi
-import main.backend.helpers.Retrofit
-import retrofit2.create
+import main.backend.helpers.RetrofitClient
 
-open class ApiBase : Retrofit() {
+open class ApiBase {
 
-    val userApi = retrofit().create<UserApi>()
+    val userApi by lazy { RetrofitClient.createService(UserApi::class.java) }
 }

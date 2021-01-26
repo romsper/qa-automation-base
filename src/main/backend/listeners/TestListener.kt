@@ -1,5 +1,7 @@
 package main.backend.listeners
 
+import com.codeborne.selenide.Screenshots
+import io.qameta.allure.Attachment
 import org.junit.platform.engine.TestExecutionResult
 import org.junit.platform.launcher.TestExecutionListener
 import org.junit.platform.launcher.TestIdentifier
@@ -13,6 +15,9 @@ class TestListener : TestExecutionListener {
 
     override fun executionFinished(testIdentifier: TestIdentifier?, testExecutionResult: TestExecutionResult?) {
         if (testIdentifier!!.isTest) println("Finish: ${testIdentifier.displayName}")
+        if (testExecutionResult!!.status == TestExecutionResult.Status.FAILED && testIdentifier.displayName != "JUnit Jupiter") {
+            attachScreenshot()
+        }
     }
 
     override fun executionSkipped(testIdentifier: TestIdentifier?, reason: String?) {
@@ -21,5 +26,10 @@ class TestListener : TestExecutionListener {
 
     override fun testPlanExecutionFinished(testPlan: TestPlan?) {
         println("|----- FINISH -----|")
+    }
+
+    @Attachment(value = "{name}", type = "image/png")
+    fun attachScreenshot(name: String = "SCREENSHOT"): ByteArray? {
+        return Screenshots.takeScreenShotAsFile()?.readBytes()
     }
 }
