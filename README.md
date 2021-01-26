@@ -19,7 +19,7 @@ This repository contains a few automation base projects which were written by **
 
 [Selenide](https://selenide.org/) - framework for test automation powered by Selenium WebDriver.
 
-[Selenoid](https://aerokube.com/selenoid/latest/) - powerful Golang implementation of the original Selenium hub code. One configuration for the `localhost` and `remote` runs and easy to update and manage through Docker and VNC. They have paid cloud farm [Moon](https://aerokube.com/)
+[Selenoid](https://aerokube.com/selenoid/latest/) - powerful `Golang` implementation of the original Selenium Grid farm. One configuration for the `localhost` and `remote` runs and easy to update and manage through `Docker` and `VNC` `(free)`. Also, they provide `paid` `Kubernetes` (`free` for 4 pods) solution [Moon](https://aerokube.com/)
 
 [Retrofit](https://square.github.io/retrofit/) - this is the framework for work with API. It's much faster and easier than Rest-Assured. Also, it provides a better code style.
 
@@ -71,7 +71,7 @@ You need to install `Selenoid and Selenoid-UI` and `Allure`
 
 #### Notes
 
-1. Those tests was splitted by `TAGS` (annotation above test classes) and you need to check this before if you want to run only one group. 
+1. Those tests was splitted by `TAG` (annotation above test classes) and you need to check this before if you want to run only one group. 
 2. If you want to run a few test classes please be sure you have free nodes for UI because all tests work in `PARALLEL` mode by class
 
 #### Start
