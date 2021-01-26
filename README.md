@@ -79,7 +79,7 @@ You need to install `Selenoid and Selenoid-UI` and `Allure`
 Run only one test group/tag: 
 
 ```bash
-$ mvn clean test -D TAGS=<tag name>
+$ mvn clean test -D TAG=<tag name>
 ```
 
 Run all tests (UI and BACK):
@@ -89,11 +89,11 @@ $ mvn clean test
 ```
 or
 ```bash
-$ mvn clean test -D TAGS=regress
+$ mvn clean test -D TAG=regress
 ```
 [ONLY FOR UI] If you want to run the tests on the remote computer you need to transfer `HUB_URL` varaible to the env:
 ```bash
-$ mvn clean test -D TAGS=<tag name> -D HUB_URL=<ip or host>
+$ mvn clean test -D TAG=<tag name> -D HUB_URL=<ip or host>
 ```
 
 #### After tests
