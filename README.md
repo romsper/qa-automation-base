@@ -7,7 +7,7 @@ This repository contains a few automation base projects which were written by **
 #### Branches
 
   - [kotlin-testng-rest-assured](https://github.com/romsper/qa-automation-bases/tree/kotlin-testng-rest-assured) - Kotlin | Rest-Assured | Selenide | TestNG | Allure
-  - [kotlin-junit5-retrofit](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-retrofit) - Kotlin | Retrofit | Selenide | JUnit 5 | Allure
+  - [kotlin-junit5-retrofit](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-retrofit) - Kotlin | Retrofit | Selenide | JUnit 5 | Allure -> Updated `26.01.2021`
   - [kotlin-junit5-appium](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-appium) - Kotlin | Selenide/Appium | JUnit 5 | Allure | Allure EE | TestRail
   - [js-mocha-chai](https://github.com/romsper/qa-automation-bases/tree/js-mocha-chai) - JS | Mocha | Chai | Allure
   
