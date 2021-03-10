@@ -1,0 +1,73 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "User",
+    "children" : [ {
+      "name" : "getUsers",
+      "children" : [ {
+        "name" : "Positive -> Get users list",
+        "uid" : "f1ad8833505b779f",
+        "parentUid" : "c7730c3c6830e0df418ef0ec40ec0339",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615400505106,
+          "stop" : 1615400507646,
+          "duration" : 2540
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Negative -> Get users list",
+        "uid" : "e69f1cfa63eccad5",
+        "parentUid" : "c7730c3c6830e0df418ef0ec40ec0339",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615400507807,
+          "stop" : 1615400507966,
+          "duration" : 159
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c7730c3c6830e0df418ef0ec40ec0339"
+    } ],
+    "uid" : "8af7184e28aa457354c31b2cdc2fa2fe"
+  }, {
+    "name" : "Authorization",
+    "children" : [ {
+      "name" : "Authorization",
+      "children" : [ {
+        "name" : "Negative -> Check email validation asd@asd.com",
+        "uid" : "83035c03e58988a4",
+        "parentUid" : "f52972f59a50cf1d073f502466bed902",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615400505106,
+          "stop" : 1615400517932,
+          "duration" : 12826
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Negative -> Check email validation asd",
+        "uid" : "4f640bcf0749f37b",
+        "parentUid" : "f52972f59a50cf1d073f502466bed902",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615400517966,
+          "stop" : 1615400521205,
+          "duration" : 3239
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f52972f59a50cf1d073f502466bed902"
+    } ],
+    "uid" : "247f290730831b7969ad224582050a32"
+  } ],
+  "name" : "behaviors"
+}

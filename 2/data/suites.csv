@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Wed Mar 10 18:21:45 GMT 2021","Wed Mar 10 18:21:47 GMT 2021","2540","","test.backend.UserTest","","test.backend.UserTest","checkUserPositive","Positive -> Get users list",""
+"failed","Wed Mar 10 18:21:45 GMT 2021","Wed Mar 10 18:21:57 GMT 2021","12826","","test.frontend.AuthTest","","test.frontend.AuthTest","badAuthTest","Negative -> Check email validation asd@asd.com",""
+"broken","Wed Mar 10 18:21:47 GMT 2021","Wed Mar 10 18:21:47 GMT 2021","159","","test.backend.UserTest","","test.backend.UserTest","checkUserNegative","Negative -> Get users list",""
+"failed","Wed Mar 10 18:21:57 GMT 2021","Wed Mar 10 18:22:01 GMT 2021","3239","","test.frontend.AuthTest","","test.frontend.AuthTest","badAuthTest","Negative -> Check email validation asd",""

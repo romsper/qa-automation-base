@@ -1,0 +1,69 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az210-125",
+    "children" : [ {
+      "name" : "4037@fv-az210-125.ForkJoinPool-1-worker-0(11)",
+      "children" : [ {
+        "name" : "Positive -> Get users list",
+        "uid" : "f1ad8833505b779f",
+        "parentUid" : "aaf2bb5912b6c2812c7e6d024c407c24",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615400505106,
+          "stop" : 1615400507646,
+          "duration" : 2540
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Negative -> Get users list",
+        "uid" : "e69f1cfa63eccad5",
+        "parentUid" : "aaf2bb5912b6c2812c7e6d024c407c24",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615400507807,
+          "stop" : 1615400507966,
+          "duration" : 159
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "aaf2bb5912b6c2812c7e6d024c407c24"
+    }, {
+      "name" : "4037@fv-az210-125.ForkJoinPool-1-worker-1(10)",
+      "children" : [ {
+        "name" : "Negative -> Check email validation asd@asd.com",
+        "uid" : "83035c03e58988a4",
+        "parentUid" : "47d16c9b53c3b842f91f3c8b5714b73f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615400505106,
+          "stop" : 1615400517932,
+          "duration" : 12826
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Negative -> Check email validation asd",
+        "uid" : "4f640bcf0749f37b",
+        "parentUid" : "47d16c9b53c3b842f91f3c8b5714b73f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615400517966,
+          "stop" : 1615400521205,
+          "duration" : 3239
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "47d16c9b53c3b842f91f3c8b5714b73f"
+    } ],
+    "uid" : "f2c9d9704a285c0eb6505617f610cbaf"
+  } ],
+  "name" : "timeline"
+}
