@@ -20,9 +20,9 @@ jobs:
           java-version: 1.8
 
       - name: Set up Maven
-        uses: aahmed-se/setup-maven@v3
+        uses: stCarolas/setup-maven@v4
         with:
-          maven-version: 3.6.1
+          maven-version: 3.6.3
 
       - name: Start Selenoid Server
         uses: Xotabu4/selenoid-github-action@v1
