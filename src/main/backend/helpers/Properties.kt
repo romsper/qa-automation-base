@@ -14,6 +14,7 @@ class Properties {
 
             return Props(
                 browserName = prop.getProperty("browser.name"),
+                browserVersion = prop.getProperty("browser.version"),
                 serverHostname = prop.getProperty("servers.hostname"),
                 serversUrl = prop.getProperty("servers.url"),
                 adminId = prop.getProperty("admin.id").toLong(),
@@ -28,6 +29,7 @@ class Properties {
     data class Props(
         val dateWithTimeZone: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ"),
         var browserName: String,
+        var browserVersion: String,
         var serverHostname: String,
         var serversUrl: String,
         var adminId: Long,
