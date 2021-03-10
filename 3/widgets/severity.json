@@ -1,0 +1,41 @@
+[ {
+  "uid" : "e8f292f48116bc2c",
+  "name" : "Positive -> Get users list",
+  "time" : {
+    "start" : 1615402968072,
+    "stop" : 1615402970195,
+    "duration" : 2123
+  },
+  "status" : "broken",
+  "severity" : "blocker"
+}, {
+  "uid" : "9be48796ce527aeb",
+  "name" : "Negative -> Check email validation asd@asd.com",
+  "time" : {
+    "start" : 1615402968073,
+    "stop" : 1615402977644,
+    "duration" : 9571
+  },
+  "status" : "failed",
+  "severity" : "blocker"
+}, {
+  "uid" : "34801c58b192c5be",
+  "name" : "Negative -> Check email validation asd",
+  "time" : {
+    "start" : 1615402977670,
+    "stop" : 1615402980461,
+    "duration" : 2791
+  },
+  "status" : "failed",
+  "severity" : "blocker"
+}, {
+  "uid" : "d277c4c69a5fe473",
+  "name" : "Negative -> Get users list",
+  "time" : {
+    "start" : 1615402970384,
+    "stop" : 1615402970464,
+    "duration" : 80
+  },
+  "status" : "broken",
+  "severity" : "blocker"
+} ]

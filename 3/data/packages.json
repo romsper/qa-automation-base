@@ -1,0 +1,69 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "test",
+    "children" : [ {
+      "name" : "backend.UserTest",
+      "children" : [ {
+        "name" : "checkUserPositive",
+        "uid" : "e8f292f48116bc2c",
+        "parentUid" : "62100ab3979d71182744c6f82f1fe30f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615402968072,
+          "stop" : 1615402970195,
+          "duration" : 2123
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "checkUserNegative",
+        "uid" : "d277c4c69a5fe473",
+        "parentUid" : "62100ab3979d71182744c6f82f1fe30f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615402970384,
+          "stop" : 1615402970464,
+          "duration" : 80
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "backend.UserTest"
+    }, {
+      "name" : "frontend.AuthTest",
+      "children" : [ {
+        "name" : "badAuthTest",
+        "uid" : "9be48796ce527aeb",
+        "parentUid" : "3ea54c40b3b43e2be0d06ee1028296c1",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615402968073,
+          "stop" : 1615402977644,
+          "duration" : 9571
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "badAuthTest",
+        "uid" : "34801c58b192c5be",
+        "parentUid" : "3ea54c40b3b43e2be0d06ee1028296c1",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615402977670,
+          "stop" : 1615402980461,
+          "duration" : 2791
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "frontend.AuthTest"
+    } ],
+    "uid" : "d662795e8d349f9b5595bf62f43ea7ae"
+  } ],
+  "name" : "packages"
+}

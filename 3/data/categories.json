@@ -1,0 +1,77 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 109 path $.results[0].location.street",
+      "children" : [ {
+        "name" : "Positive -> Get users list",
+        "uid" : "e8f292f48116bc2c",
+        "parentUid" : "fdd0845ce78d102fd6d0f09adc06ee2a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615402968072,
+          "stop" : 1615402970195,
+          "duration" : 2123
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fdd0845ce78d102fd6d0f09adc06ee2a"
+    }, {
+      "name" : "java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 107 path $.results[0].location.street",
+      "children" : [ {
+        "name" : "Negative -> Get users list",
+        "uid" : "d277c4c69a5fe473",
+        "parentUid" : "c7649b726f0bb7786999321a07f00712",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615402970384,
+          "stop" : 1615402970464,
+          "duration" : 80
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c7649b726f0bb7786999321a07f00712"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected:<true> but was:<false>",
+      "children" : [ {
+        "name" : "Negative -> Check email validation asd@asd.com",
+        "uid" : "9be48796ce527aeb",
+        "parentUid" : "b8db52e0f2194acaeeed4493036f5b6a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615402968073,
+          "stop" : 1615402977644,
+          "duration" : 9571
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Negative -> Check email validation asd",
+        "uid" : "34801c58b192c5be",
+        "parentUid" : "b8db52e0f2194acaeeed4493036f5b6a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615402977670,
+          "stop" : 1615402980461,
+          "duration" : 2791
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b8db52e0f2194acaeeed4493036f5b6a"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
