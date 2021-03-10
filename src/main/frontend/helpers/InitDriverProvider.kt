@@ -29,14 +29,14 @@ open class InitDriverProvider : WebDriverProvider {
         return when (properties().browserName) {
             "chrome" -> {
                 ChromeOptions().apply {
-                    setCapability("version", "86")
+                    setCapability("version", properties().browserVersion)
                     setCapability("enableVNC", true)
                     setCapability("acceptInsecureCerts", true)
                 }
             }
             else -> throw Error("Browser is not defined")
         }
-            .run { RemoteWebDriver(URL("http://$HUB_URL:4444/wd/hub"), this) }
+            .run { RemoteWebDriver(URL("http://$SELENOID_HUB_HOST:4444/wd/hub"), this) }
             .apply { this.fileDetector = LocalFileDetector() }
     }
 }
