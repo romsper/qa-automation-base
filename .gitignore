@@ -1,5 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
-allure-results/
+allure-report/
 build/
 .idea/
 *.iml
