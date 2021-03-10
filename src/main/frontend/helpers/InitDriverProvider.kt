@@ -23,7 +23,7 @@ open class InitDriverProvider : WebDriverProvider {
 //        Configuration.fileDownload = FileDownloadMode.PROXY
     }
 
-    var HUB_URL = if (System.getProperty("HUB_URL").isNullOrEmpty()) "localhost" else System.getProperty("HUB_URL")
+    var SELENOID_HUB_HOST = if (System.getProperty("SELENOID_HUB_HOST").isNullOrEmpty()) "localhost" else System.getProperty("SELENOID_HUB_HOST")
 
     override fun createDriver(capabilities: DesiredCapabilities): RemoteWebDriver {
         return when (properties().browserName) {
