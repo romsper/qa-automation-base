@@ -8,7 +8,7 @@ on:
       farm:
         description: 'Do you need a browser farm?'
         required: true
-        default: 'false'
+        default: 'no'
       farm_host:
         description: 'SELENOID_HUB_HOST'
         required: false
@@ -36,13 +36,14 @@ jobs:
           maven-version: 3.6.3
 
       - name: Start Selenoid Server
-        if: ${{ github.event.inputs.farm }} == 'true'
+        if: ${{ github.event.inputs.farm }} == 'yes'
         uses: Xotabu4/selenoid-github-action@v1
 
       - name: Run test
         env:
           SELENOID_HUB_HOST: ${{ github.event.inputs.farm_host }}
-        run: mvn clean test -D TAG=${{ github.event.inputs.tags }}
+          TAGS: ${{ github.event.inputs.tags }}
+        run: mvn clean test
 
       - name: Allure history
         uses: actions/checkout@v2

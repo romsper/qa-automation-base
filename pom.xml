@@ -246,7 +246,7 @@
                 <configuration>
                     <trimStackTrace>false</trimStackTrace>
                     <properties>
-                        <includeTags>${TAG}</includeTags>
+                        <includeTags>${TAGS}</includeTags>
                     </properties>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
