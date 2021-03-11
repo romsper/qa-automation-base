@@ -1,0 +1,59 @@
+on: workflow_dispatch
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Run Tests
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4
+        with:
+          maven-version: 3.6.3
+
+      - name: Start Selenoid Server
+        if: ${{ github.event.inputs.farm }} == true
+        uses: Xotabu4/selenoid-github-action@v1
+
+      - name: Run test
+        env:
+          SELENOID_HUB_HOST: ${{ github.event.inputs.farm_host }}
+        run: mvn clean test -D TAG=${{ github.event.inputs.tags }}
+
+      - name: Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: allure-pages
+          path: allure-pages
+
+      - name: Create Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: target/allure-results
+          gh_pages: allure-pages
+          allure_report: allure-report
+          allure_history: allure-history
+
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: allure-pages
+          PUBLISH_DIR: allure-history
