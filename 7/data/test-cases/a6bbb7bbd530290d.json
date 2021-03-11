@@ -1,0 +1,207 @@
+{
+  "uid" : "a6bbb7bbd530290d",
+  "name" : "Negative -> Check email validation asd",
+  "fullName" : "test.frontend.AuthTest.badAuthTest",
+  "historyId" : "1220e7c5b919eea0dd53e177ff0247b0",
+  "time" : {
+    "start" : 1615483381403,
+    "stop" : 1615483384479,
+    "duration" : 3076
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "openBrowser",
+    "time" : {
+      "start" : 1615483381404,
+      "stop" : 1615483382606,
+      "duration" : 1202
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Type Login and Pass",
+      "time" : {
+        "start" : 1615483382607,
+        "stop" : 1615483382999,
+        "duration" : 392
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "email",
+        "value" : "asd"
+      }, {
+        "name" : "pass",
+        "value" : "asdfg123"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Click Submit",
+      "time" : {
+        "start" : 1615483382999,
+        "stop" : 1615483383662,
+        "duration" : 663
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Get error msg",
+      "time" : {
+        "start" : 1615483383662,
+        "stop" : 1615483384393,
+        "duration" : 731
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "clearBrowser",
+    "time" : {
+      "start" : 1615483384394,
+      "stop" : 1615483384479,
+      "duration" : 85
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "closeBrowser",
+    "time" : {
+      "start" : 1615483384487,
+      "stop" : 1615483384541,
+      "duration" : 54
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "auth"
+  }, {
+    "name" : "tag",
+    "value" : "regress"
+  }, {
+    "name" : "feature",
+    "value" : "Authorization"
+  }, {
+    "name" : "story",
+    "value" : "Authorization"
+  }, {
+    "name" : "host",
+    "value" : "fv-az189-765"
+  }, {
+    "name" : "thread",
+    "value" : "3807@fv-az189-765.ForkJoinPool-1-worker-1(10)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "test.frontend.AuthTest"
+  }, {
+    "name" : "testClass",
+    "value" : "test.frontend.AuthTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "badAuthTest"
+  }, {
+    "name" : "suite",
+    "value" : "test.frontend.AuthTest"
+  }, {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "JIRA-123",
+    "url" : "https://company.atlassian.net/browse/JIRA-123",
+    "type" : "issue"
+  }, {
+    "name" : "TR-15",
+    "url" : "https://company.testrail.io/index.php?/cases/view/TR-15",
+    "type" : "tms"
+  } ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "ac6ce097ceb3d669",
+        "reportUrl" : "https://romsper.github.io/qa-automation-base/6//#testresult/ac6ce097ceb3d669",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615482520951,
+          "stop" : 1615482524173,
+          "duration" : 3222
+        }
+      } ]
+    },
+    "tags" : [ "auth", "regress" ]
+  },
+  "source" : "a6bbb7bbd530290d.json",
+  "parameterValues" : [ ]
+}
