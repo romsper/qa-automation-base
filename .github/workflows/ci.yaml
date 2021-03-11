@@ -1,4 +1,4 @@
-name: kotlin-junit5-retrofit
+name: qa-automation-base
 
 on:
   workflow_dispatch:
