@@ -1,16 +1,33 @@
 name: kotlin-junit5-retrofit
 
 on:
-  push:
-    branches:
-      - 'kotlin-junit5-retrofit'
-    paths-ignore:
-      - 'docs/**'
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Tags'
+        required: true
+        default: 'regress'
+      farm:
+        description: 'Do you need a browser farm?'
+        required: true
+        default: 'false'
+      farm_host:
+        description: 'SELENOID_HUB_HOST'
+        required: false
+        default: 'localhost'
+      browser:
+        description: 'Browser name'
+        required: false
+        default: 'chrome'
+#
+#  push:
+#    branches:
+#      - 'kotlin-junit5-retrofit'
 
 jobs:
   tests:
     runs-on: ubuntu-latest
-    name: Run Frontend Tests
+    name: Run Tests
     steps:
       - uses: actions/checkout@v2
 
@@ -25,12 +42,13 @@ jobs:
           maven-version: 3.6.3
 
       - name: Start Selenoid Server
+        if: ${{ github.event.inputs.farm }} == 'true'
         uses: Xotabu4/selenoid-github-action@v1
 
       - name: Run test
         env:
-          SELENOID_HUB_HOST: 'localhost'
-        run: mvn clean test -D TAGS=auth
+          SELENOID_HUB_HOST: ${{ github.event.inputs.farm_host }}
+        run: mvn clean test -D TAG=${{ github.event.inputs.tags }}
 
       - name: Allure history
         uses: actions/checkout@v2
