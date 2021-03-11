@@ -1,20 +1,22 @@
+name: kotlin-junit5-retrofit
+
 on:
   workflow_dispatch:
     inputs:
       tags:
-        description: 'Tags'
+        description: 'What TAGS do you want to run?'
         required: true
         default: 'regress'
       farm:
-        description: 'Do you need a browser farm?'
+        description: 'Do you need a browser FARM?'
         required: true
         default: 'no'
       farm_host:
-        description: 'SELENOID_HUB_HOST'
+        description: 'What is your SELENOID_HUB_HOST?'
         required: false
         default: 'localhost'
       browser:
-        description: 'Browser name'
+        description: 'What BROWSER do you need?'
         required: false
         default: 'chrome'
 
