@@ -1,15 +1,3 @@
 [ {
-  "buildOrder" : 3,
-  "reportUrl" : "https://romsper.github.io/qa-automation-base/3/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "duration" : 12389
-  }
-}, {
-  "buildOrder" : 2,
-  "reportUrl" : "https://romsper.github.io/qa-automation-base/2/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "duration" : 16099
-  }
+  "data" : { }
 } ]
