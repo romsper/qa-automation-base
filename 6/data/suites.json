@@ -1,0 +1,65 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "test.backend.UserTest",
+    "children" : [ {
+      "name" : "Positive -> Get users list",
+      "uid" : "c429ccf374edc4e2",
+      "parentUid" : "285698f1f35f11c0fb46c8bccd525de0",
+      "status" : "broken",
+      "time" : {
+        "start" : 1615482510059,
+        "stop" : 1615482512868,
+        "duration" : 2809
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Negative -> Get users list",
+      "uid" : "10c0870a4845a543",
+      "parentUid" : "285698f1f35f11c0fb46c8bccd525de0",
+      "status" : "broken",
+      "time" : {
+        "start" : 1615482513074,
+        "stop" : 1615482513268,
+        "duration" : 194
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "285698f1f35f11c0fb46c8bccd525de0"
+  }, {
+    "name" : "test.frontend.AuthTest",
+    "children" : [ {
+      "name" : "Negative -> Check email validation asd@asd.com",
+      "uid" : "f62f2d0fdb1127cb",
+      "parentUid" : "6c4112fe94e5b898fc6d0967a2c509c7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1615482510062,
+        "stop" : 1615482520927,
+        "duration" : 10865
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Negative -> Check email validation asd",
+      "uid" : "ac6ce097ceb3d669",
+      "parentUid" : "6c4112fe94e5b898fc6d0967a2c509c7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615482520951,
+        "stop" : 1615482524173,
+        "duration" : 3222
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "6c4112fe94e5b898fc6d0967a2c509c7"
+  } ],
+  "name" : "suites"
+}

@@ -1,0 +1,64 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 111 path $.results[0].location.street",
+      "children" : [ {
+        "name" : "Positive -> Get users list",
+        "uid" : "c429ccf374edc4e2",
+        "parentUid" : "eeec43710e915d2257be701039bec4c3",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615482510059,
+          "stop" : 1615482512868,
+          "duration" : 2809
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "eeec43710e915d2257be701039bec4c3"
+    }, {
+      "name" : "java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 106 path $.results[0].location.street",
+      "children" : [ {
+        "name" : "Negative -> Get users list",
+        "uid" : "10c0870a4845a543",
+        "parentUid" : "b362626768bf8f2ba08053ecc6e9cf22",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615482513074,
+          "stop" : 1615482513268,
+          "duration" : 194
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b362626768bf8f2ba08053ecc6e9cf22"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected:<true> but was:<false>",
+      "children" : [ {
+        "name" : "Negative -> Check email validation asd@asd.com",
+        "uid" : "f62f2d0fdb1127cb",
+        "parentUid" : "b8db52e0f2194acaeeed4493036f5b6a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1615482510062,
+          "stop" : 1615482520927,
+          "duration" : 10865
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b8db52e0f2194acaeeed4493036f5b6a"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
