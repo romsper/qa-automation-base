@@ -1,0 +1,69 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az180-829', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-1040-azure', java.version: '1.8.0_282'\nDriver info: driver.version: SelenideDriver\nselenide.url: https://vk.com/\nselenide.baseUrl: https://vk.com",
+      "children" : [ {
+        "name" : "Negative -> Check email validation asd@asd.com",
+        "uid" : "1ba2acc052bc1c6a",
+        "parentUid" : "1cbe4e3a01bd0a009bfb046b81fdc70a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615485021053,
+          "stop" : 1615485022320,
+          "duration" : 1267
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Negative -> Check email validation asd",
+        "uid" : "2059f249171f8832",
+        "parentUid" : "1cbe4e3a01bd0a009bfb046b81fdc70a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615485022550,
+          "stop" : 1615485022585,
+          "duration" : 35
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1cbe4e3a01bd0a009bfb046b81fdc70a"
+    }, {
+      "name" : "java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 109 path $.results[0].location.street",
+      "children" : [ {
+        "name" : "Positive -> Get users list",
+        "uid" : "161116593d0b4ab7",
+        "parentUid" : "fdd0845ce78d102fd6d0f09adc06ee2a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615485021053,
+          "stop" : 1615485023362,
+          "duration" : 2309
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Negative -> Get users list",
+        "uid" : "e454b0b426d81526",
+        "parentUid" : "fdd0845ce78d102fd6d0f09adc06ee2a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615485023395,
+          "stop" : 1615485023518,
+          "duration" : 123
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fdd0845ce78d102fd6d0f09adc06ee2a"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
