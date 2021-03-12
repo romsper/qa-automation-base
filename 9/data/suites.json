@@ -1,0 +1,35 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "test.backend.UserTest",
+    "children" : [ {
+      "name" : "Positive -> Get users list",
+      "uid" : "c89c411c9c94800a",
+      "parentUid" : "285698f1f35f11c0fb46c8bccd525de0",
+      "status" : "broken",
+      "time" : {
+        "start" : 1615565704370,
+        "stop" : 1615565706117,
+        "duration" : 1747
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Negative -> Get users list",
+      "uid" : "499aeb44b4417d7f",
+      "parentUid" : "285698f1f35f11c0fb46c8bccd525de0",
+      "status" : "broken",
+      "time" : {
+        "start" : 1615565706255,
+        "stop" : 1615565706358,
+        "duration" : 103
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "285698f1f35f11c0fb46c8bccd525de0"
+  } ],
+  "name" : "suites"
+}

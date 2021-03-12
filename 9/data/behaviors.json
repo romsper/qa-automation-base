@@ -1,0 +1,39 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "User",
+    "children" : [ {
+      "name" : "getUsers",
+      "children" : [ {
+        "name" : "Positive -> Get users list",
+        "uid" : "c89c411c9c94800a",
+        "parentUid" : "c7730c3c6830e0df418ef0ec40ec0339",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615565704370,
+          "stop" : 1615565706117,
+          "duration" : 1747
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Negative -> Get users list",
+        "uid" : "499aeb44b4417d7f",
+        "parentUid" : "c7730c3c6830e0df418ef0ec40ec0339",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615565706255,
+          "stop" : 1615565706358,
+          "duration" : 103
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c7730c3c6830e0df418ef0ec40ec0339"
+    } ],
+    "uid" : "8af7184e28aa457354c31b2cdc2fa2fe"
+  } ],
+  "name" : "behaviors"
+}

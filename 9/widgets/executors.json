@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://romsper.github.io/qa-automation-base",
+  "buildOrder" : 9,
+  "buildName" : "GitHub Actions Run #646767005",
+  "buildUrl" : "https://github.com/romsper/qa-automation-base/actions/runs/646767005",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://romsper.github.io/qa-automation-base/9/"
+} ]

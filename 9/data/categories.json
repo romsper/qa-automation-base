@@ -1,0 +1,43 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 111 path $.results[0].location.street",
+      "children" : [ {
+        "name" : "Positive -> Get users list",
+        "uid" : "c89c411c9c94800a",
+        "parentUid" : "eeec43710e915d2257be701039bec4c3",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615565704370,
+          "stop" : 1615565706117,
+          "duration" : 1747
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "eeec43710e915d2257be701039bec4c3"
+    }, {
+      "name" : "java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 112 path $.results[0].location.street",
+      "children" : [ {
+        "name" : "Negative -> Get users list",
+        "uid" : "499aeb44b4417d7f",
+        "parentUid" : "08b38320f1a67668ac9552566a91d3ac",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615565706255,
+          "stop" : 1615565706358,
+          "duration" : 103
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "08b38320f1a67668ac9552566a91d3ac"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}

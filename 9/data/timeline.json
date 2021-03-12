@@ -1,0 +1,39 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az189-765",
+    "children" : [ {
+      "name" : "2969@fv-az189-765.ForkJoinPool-1-worker-1(10)",
+      "children" : [ {
+        "name" : "Negative -> Get users list",
+        "uid" : "499aeb44b4417d7f",
+        "parentUid" : "bb2fdc8b81e5b061ce8e35df1dd66e20",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615565706255,
+          "stop" : 1615565706358,
+          "duration" : 103
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Positive -> Get users list",
+        "uid" : "c89c411c9c94800a",
+        "parentUid" : "bb2fdc8b81e5b061ce8e35df1dd66e20",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615565704370,
+          "stop" : 1615565706117,
+          "duration" : 1747
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bb2fdc8b81e5b061ce8e35df1dd66e20"
+    } ],
+    "uid" : "0739775fc97d083aa73942362909c03c"
+  } ],
+  "name" : "timeline"
+}

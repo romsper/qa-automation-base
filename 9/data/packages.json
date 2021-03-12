@@ -1,0 +1,35 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "test.backend.UserTest",
+    "children" : [ {
+      "name" : "checkUserPositive",
+      "uid" : "c89c411c9c94800a",
+      "parentUid" : "62100ab3979d71182744c6f82f1fe30f",
+      "status" : "broken",
+      "time" : {
+        "start" : 1615565704370,
+        "stop" : 1615565706117,
+        "duration" : 1747
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkUserNegative",
+      "uid" : "499aeb44b4417d7f",
+      "parentUid" : "62100ab3979d71182744c6f82f1fe30f",
+      "status" : "broken",
+      "time" : {
+        "start" : 1615565706255,
+        "stop" : 1615565706358,
+        "duration" : 103
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "test.backend.UserTest"
+  } ],
+  "name" : "packages"
+}

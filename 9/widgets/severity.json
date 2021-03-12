@@ -1,0 +1,21 @@
+[ {
+  "uid" : "499aeb44b4417d7f",
+  "name" : "Negative -> Get users list",
+  "time" : {
+    "start" : 1615565706255,
+    "stop" : 1615565706358,
+    "duration" : 103
+  },
+  "status" : "broken",
+  "severity" : "blocker"
+}, {
+  "uid" : "c89c411c9c94800a",
+  "name" : "Positive -> Get users list",
+  "time" : {
+    "start" : 1615565704370,
+    "stop" : 1615565706117,
+    "duration" : 1747
+  },
+  "status" : "broken",
+  "severity" : "blocker"
+} ]
