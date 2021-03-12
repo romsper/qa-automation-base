@@ -245,9 +245,8 @@
                 <version>${maven-surefire.version}</version>
                 <configuration>
                     <trimStackTrace>false</trimStackTrace>
-                    <properties>
-                        <includeTags>${TAGS}</includeTags>
-                    </properties>
+                    <groups>${TAGS}</groups>
+                    <excludedGroups>${EX_TAGS}</excludedGroups>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
