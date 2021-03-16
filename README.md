@@ -4,6 +4,10 @@
 
 This repository contains a few automation base projects which were written by **Kotlin** and **JavaScript**.
 
+#### GitHub Actions
+
+This branch `kotlin-junit5-retrofit` is integrated with GHA -> I pass test results to this branch `allure-pages` and host them using GitHub Pages 
+
 #### Branches
 
   - [kotlin-testng-rest-assured](https://github.com/romsper/qa-automation-bases/tree/kotlin-testng-rest-assured) - Kotlin | Rest-Assured | Selenide | TestNG | Allure
