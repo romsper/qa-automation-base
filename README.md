@@ -2,7 +2,7 @@
 
 #### Description
 
-This repository contains a few automation base projects which were written by **Kotlin** and **JavaScript**.
+This repository contains a few automation base projects that were written by **Kotlin** and **JavaScript** and **TypeScript**.
 
 #### GitHub Actions
 
