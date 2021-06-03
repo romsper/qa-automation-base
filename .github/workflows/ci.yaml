@@ -1,24 +1,11 @@
-name: qa-automation-base
-
+name: typescript-playwright-jest
 on:
   workflow_dispatch:
     inputs:
-      tags:
-        description: 'Tags'
-        required: true
-        default: 'regress'
-      farm:
-        description: 'Do you need a browser farm?'
-        required: true
-        default: 'false'
-      farm_host:
-        description: 'SELENOID_HUB_HOST'
-        required: false
-        default: 'localhost'
       browser:
         description: 'Browser name'
         required: false
-        default: 'chrome'
+        default: 'chromium'
 
 jobs:
   tests:
@@ -27,24 +14,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
+      - name: Install NodeJS
+        uses: actions/setup-node@v2
 
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4
-        with:
-          maven-version: 3.6.3
+      - name: Download Chromium
+        run: npx playwright install-deps chromium
 
-      - name: Start Selenoid Server
-        if: ${{ github.event.inputs.farm }} == 'true'
-        uses: Xotabu4/selenoid-github-action@v1
+      - name: Install Node modules 
+        run: npm install
 
       - name: Run test
-        env:
-          SELENOID_HUB_HOST: ${{ github.event.inputs.farm_host }}
-        run: mvn clean test -D TAG=${{ github.event.inputs.tags }}
+        run: xvfb-run --auto-servernum -- npm test
 
       - name: Allure history
         uses: actions/checkout@v2
@@ -59,7 +39,7 @@ jobs:
         if: always()
         id: allure-report
         with:
-          allure_results: target/allure-results
+          allure_results: reports/allure-results
           gh_pages: allure-pages
           allure_report: allure-report
           allure_history: allure-history
