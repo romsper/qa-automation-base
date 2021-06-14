@@ -2,7 +2,7 @@
 
 #### Description
 
-This repository contains a few automation base projects that were written by **Kotlin** and **JavaScript** and **TypeScript**.
+There are basic projects for automation frameworks based on **Kotlin/Java** and **TypeScript** for the **backend**, **frontend**, and **mobile**.
 
 #### GitHub Actions
 
