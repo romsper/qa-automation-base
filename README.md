@@ -54,8 +54,6 @@ This branch `kotlin-junit5-retrofit` is integrated with GHA -> I pass test resul
 
 [Allure EE](https://qameta.io/) - this is like Allure + TestRail + CI. [Documentation](https://docs.qameta.io/allure-ee/) with features and etc.
 
-> Price is two times cheaper than TestRail
-
 #### The main fetures: 
 
 `Live documentation` - Allure EE keeps your test documentation updated based on test runs.
