@@ -13,7 +13,7 @@ This branch `kotlin-junit5-retrofit` is integrated with GHA -> I pass test resul
   - [kotlin-testng-rest-assured](https://github.com/romsper/qa-automation-bases/tree/kotlin-testng-rest-assured) - Kotlin | Rest-Assured | Selenide | TestNG | Allure
   - [kotlin-junit5-retrofit](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-retrofit) - Kotlin | Retrofit | Selenide | JUnit 5 | Allure -> Updated `26.01.2021`
   - [kotlin-junit5-appium](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-appium) - Kotlin | Selenide/Appium | JUnit 5 | Allure | Allure EE | TestRail
-  - [kotlin-gradle-allure](https://github.com/romsper/qa-automation-bases/tree/kotlin-gradle-allure) - Kotlin | Gradle | JUnit 5 | Allure
+  - [kotlin-gradle-allure](https://github.com/romsper/qa-automation-bases/tree/kotlin-gradle-allure) - Kotlin | Gradle | JUnit 5 | Allure `27.08.2021`
   - [js-mocha-chai](https://github.com/romsper/qa-automation-bases/tree/js-mocha-chai) - JS | Mocha | Chai | Allure
   - [typescript-playwright-jest](https://github.com/romsper/qa-automation-bases/tree/typescript-playwright-jest) - TypeScript | Playwright | Jest | Allure -> Updated `03.06.2021`
   
