@@ -23,10 +23,10 @@ open class InitDriverProvider : WebDriverProvider {
 //        Configuration.fileDownload = FileDownloadMode.PROXY
     }
 
-    var SELENOID_HUB_HOST = if (System.getProperty("SELENOID_HUB_HOST").isNullOrEmpty()) "localhost" else System.getProperty("SELENOID_HUB_HOST")
+    var SELENOID_HUB_HOST = System.getProperty("SELENOID_HUB_HOST") ?:  "localhost"
 
     override fun createDriver(capabilities: DesiredCapabilities): RemoteWebDriver {
-        return when (properties().browserName) {
+        return when (properties().browserName) { // Feel free to use System.getProperty instead of Properties
             "chrome" -> {
                 ChromeOptions().apply {
                     setCapability("version", properties().browserVersion)

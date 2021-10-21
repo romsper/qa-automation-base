@@ -7,26 +7,15 @@ import com.codeborne.selenide.Selenide.`$`
 import com.codeborne.selenide.SelenideElement
 import org.openqa.selenium.By
 
-fun element(bySelector: By) : SelenideElement {
-    return `$`(bySelector)
-}
+class Wrappers {
 
-fun element(selector: String) : SelenideElement {
-    return `$`(selector)
-}
+    companion object {
+        fun byDataTarget(target: String): By {
+            return Selectors.by("data-target", target)
+        }
 
-fun elements(selector: String) : ElementsCollection {
-    return `$$`(selector)
-}
-
-fun elements(bySelector: By) : ElementsCollection {
-    return `$$`(bySelector)
-}
-
-fun byTarget(target : String) : By {
-    return Selectors.by("data-target", target)
-}
-
-fun byTargetId(target : String) : By {
-    return Selectors.by("data-target-id", target)
+        fun byDataTargetId(target: String): By {
+            return Selectors.by("data-target-id", target)
+        }
+    }
 }

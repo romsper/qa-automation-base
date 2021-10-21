@@ -3,6 +3,8 @@ package main.backend.helpers
 import java.text.SimpleDateFormat
 import java.util.Properties
 
+// It's just an example!
+
 @Suppress("JAVA_CLASS_ON_COMPANION")
 class Properties {
 
