@@ -1,9 +1,11 @@
+import { BasePage } from "../helpers/BasePage"
 
-const results = "div[class='q']"
+const results = "div[class='g tF2Cxc']" //I know it's bad locator - don't worry ;) 
 
-export class SearchResultPage {
+export class SearchResultPage extends BasePage {
     
-    public getSearchList() {
-        return page.$$(results)
+    async getSearchList() {
+        await this.waitSelector(results)
+        return await this.page.$$(results)
     }
 }

@@ -1,8 +1,11 @@
-# Jest Playwright Typescript example
+# Playwright TypeScript example with Allure Report
 
-## Used tools
+## Run tests
 
-- [jest-playwright](https://github.com/playwright-community/jest-playwright) - integrates Jest and Playwright
-- [expect-playwright](https://github.com/playwright-community/expect-playwright) - provides useful expect statements
-- [Jest](https://jestjs.io) - provides the testing suite
-- [ts-jest](https://github.com/kulshekhar/ts-jest) - provides support for TypeScript
+For more commands please read **package.json** -> **scripts** section 
+
+> npm run tests:gchrome
+
+## Generate report
+
+> allure serve allure-results

@@ -1,20 +1,21 @@
-import { SearchResultPage } from './SearchResultPage';
+import { BasePage } from '../helpers/BasePage'
 
-const inpSearch = "input[name='q']"
+const inpQuery = "input[name='q']"
 
-export class SearchPage {
+export class SearchPage extends BasePage {
 
-    public async typeQuery(query: string) {
-        reporter.startStep("Type search query")
-        await page.type(inpSearch, query)
-        reporter.endStep()
+    async openSearchPage() {
+        await this.page.goto("https://google.com/")
         return this
     }
 
-    public async submitSearch() {
-        reporter.startStep("Press Enter")
-        await page.press(inpSearch, "Enter")
-        reporter.endStep()
+    async typeQuery(query: string) {
+        await this.page.type(inpQuery, query)
+        return this
+    }
+
+    async submitSearch() {
+        await this.page.press(inpQuery, "Enter")
         return this
     }
 }
