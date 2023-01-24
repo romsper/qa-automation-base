@@ -3,4 +3,5 @@ allure-report/
 build/
 .idea/
 *.iml
+.gradle/
 target/

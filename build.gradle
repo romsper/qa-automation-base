@@ -19,7 +19,6 @@ allure {
     useJUnit5 {
         version = '2.20.1'
     }
-
 }
 
 sourceCompatibility = 11
