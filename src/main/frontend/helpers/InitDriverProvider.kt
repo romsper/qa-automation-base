@@ -1,9 +1,10 @@
-package main.frontend.helpers
+package frontend.helpers
 
 import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.WebDriverProvider
-import main.backend.helpers.Properties.Companion.properties
-import org.openqa.selenium.remote.DesiredCapabilities
+import backend.helpers.Properties.Companion.properties
+import org.openqa.selenium.Capabilities
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.LocalFileDetector
 import org.openqa.selenium.remote.RemoteWebDriver
@@ -23,9 +24,9 @@ open class InitDriverProvider : WebDriverProvider {
 //        Configuration.fileDownload = FileDownloadMode.PROXY
     }
 
-    var SELENOID_HUB_HOST = System.getProperty("SELENOID_HUB_HOST") ?:  "localhost"
+    private var SELENOID_HUB_HOST = System.getProperty("SELENOID_HUB_HOST") ?:  "localhost"
 
-    override fun createDriver(capabilities: DesiredCapabilities): RemoteWebDriver {
+    override fun createDriver(capabilities: Capabilities): WebDriver {
         return when (properties().browserName) { // Feel free to use System.getProperty instead of Properties
             "chrome" -> {
                 ChromeOptions().apply {

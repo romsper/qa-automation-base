@@ -1,14 +1,14 @@
-package test.backend
+package backend
 
 import io.kotest.matchers.ints.shouldBeGreaterThanOrEqual
 import io.kotest.matchers.string.shouldContain
 import io.kotest.matchers.string.shouldNotBeBlank
 import io.qameta.allure.*
-import main.backend.extention.Functions.Companion.getAsObject
-import main.backend.extention.Functions.Companion.getErrorBody
-import main.backend.extention.Functions.Companion.jsonToObject
-import main.backend.interfaces.IUsers
-import main.backend.pojo.ExampleName
+import backend.extention.Functions.Companion.getAsObject
+import backend.extention.Functions.Companion.getErrorBody
+import backend.extention.Functions.Companion.jsonToObject
+import backend.interfaces.IUsers
+import backend.models.ExampleName
 import org.junit.jupiter.api.*
 
 //TODO Keep in mind that it's just an example ;)

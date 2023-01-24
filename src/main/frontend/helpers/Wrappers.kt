@@ -1,10 +1,6 @@
-package main.frontend.helpers
+package frontend.helpers
 
-import com.codeborne.selenide.ElementsCollection
 import com.codeborne.selenide.Selectors
-import com.codeborne.selenide.Selenide.`$$`
-import com.codeborne.selenide.Selenide.`$`
-import com.codeborne.selenide.SelenideElement
 import org.openqa.selenium.By
 
 class Wrappers {

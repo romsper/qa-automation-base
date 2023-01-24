@@ -1,7 +1,7 @@
-package main.backend.base
+package backend.base
 
 import io.qameta.allure.Step
-import main.backend.base.ApiBase
+import backend.base.ApiBase
 
 class UserBase : ApiBase() {
 

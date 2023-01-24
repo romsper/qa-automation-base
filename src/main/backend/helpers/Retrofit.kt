@@ -1,17 +1,19 @@
-package main.backend.helpers
+package backend.helpers
 
 import io.qameta.allure.okhttp3.AllureOkHttp3
-import main.backend.helpers.Properties.Companion.properties
+import backend.helpers.Properties.Companion.properties
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.jackson.JacksonConverterFactory
 import java.time.Duration
 
 object RetrofitClient {
 
-    val HOST = if (System.getProperty("HOST").isNullOrBlank()) "https://randomuser.me/"
+    val HOST: String = if (System.getProperty("HOST").isNullOrBlank()) "https://randomuser.me/"
     else System.getProperty("HOST")
 
     private val timeout = Duration.ofSeconds(10)
@@ -33,7 +35,7 @@ object RetrofitClient {
         Retrofit.Builder()
             .baseUrl(properties().serverHostname)
             .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(JacksonConverterFactory.create(ObjectMapper().registerKotlinModule()))
             .build()
             .create(service)
 }

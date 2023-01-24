@@ -1,0 +1,69 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.8.0'
+    id 'io.qameta.allure' version '2.9.6'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+allure {
+    adapter.autoconfigure = true
+    version = '2.20.1'
+
+    useJUnit5 {
+        version = '2.20.1'
+    }
+
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+test {
+    jvmArgs "-noverify"
+    useJUnitPlatform{
+        if (System.getProperty("TAGS")) {
+            includeTags System.getProperty("TAGS")
+        }
+    }
+    dependsOn 'cleanTest'
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    //Pass system properties into JVM with tests
+    systemProperties(System.getProperties())
+}
+
+dependencies {
+    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: '1.8.0'
+    implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.9.1'
+
+    //JUnit
+    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.2'
+    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
+    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.9.2'
+    implementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.9.2'
+
+    //Assert
+    implementation group: 'io.kotest', name: 'kotest-assertions-core-jvm', version: '5.5.4'
+
+    //Frontend
+    implementation group: 'com.codeborne', name: 'selenide', version: '6.11.1'
+
+    //Backend
+    implementation group: 'io.github.zawn.retrofit2', name: 'retrofit', version: '2.10.6'
+    implementation group: 'io.github.zawn.retrofit2', name: 'converter-jackson', version: '2.10.6'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.1'
+    implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.14.1'
+
+    //Report
+    implementation group: 'io.qameta.allure', name: 'allure-okhttp3', version: '2.20.1'
+}

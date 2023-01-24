@@ -1,4 +1,4 @@
-package main.backend.helpers
+package backend.helpers
 
 import java.text.SimpleDateFormat
 import java.util.Properties

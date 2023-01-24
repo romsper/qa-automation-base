@@ -1,6 +1,6 @@
-package main.backend.extention
+package backend.extention
 
-import com.google.gson.Gson
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.kotest.assertions.fail
 import io.qameta.allure.Step
 import retrofit2.Call
@@ -19,7 +19,7 @@ class Functions {
 
         @Step("Convert JSON to Object")
         fun <T> String.jsonToObject(obj: Class<T>): T {
-            return Gson().fromJson(this, obj)
+            return jacksonObjectMapper().readValue(this, obj)
         }
 
         inline fun <reified T> Call<T>.retryIfEmpty(count: Int): Response<T> {

@@ -1,4 +1,4 @@
-package main.backend.pojo
+package backend.models
 
 data class UserResponse(
     val info: Info,

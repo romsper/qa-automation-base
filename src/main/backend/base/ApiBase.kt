@@ -1,7 +1,7 @@
-package main.backend.base
+package backend.base
 
-import main.backend.api.UserApi
-import main.backend.helpers.RetrofitClient
+import backend.api.UserApi
+import backend.helpers.RetrofitClient
 
 open class ApiBase {
 

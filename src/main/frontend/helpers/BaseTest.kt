@@ -1,8 +1,7 @@
-package main.frontend.helpers
+package frontend.helpers
 
 import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selenide
-import com.codeborne.selenide.WebDriverRunner
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach

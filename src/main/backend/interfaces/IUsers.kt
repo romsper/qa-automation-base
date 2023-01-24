@@ -1,6 +1,6 @@
-package main.backend.interfaces
+package backend.interfaces
 
-import main.backend.base.UserBase
+import backend.base.UserBase
 
 interface IUsers {
     val user get() = UserBase()

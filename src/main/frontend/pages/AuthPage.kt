@@ -1,9 +1,9 @@
-package main.frontend.pages
+package frontend.pages
 
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.sleep
 import io.qameta.allure.Step
-import main.frontend.elements.AuthElem
+import frontend.elements.AuthElem
 
 class AuthPage {
 

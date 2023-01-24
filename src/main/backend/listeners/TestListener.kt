@@ -1,4 +1,4 @@
-package main.backend.listeners
+package backend.listeners
 
 import com.codeborne.selenide.Screenshots
 import io.qameta.allure.Attachment

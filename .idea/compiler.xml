@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="qa-automation-base" />
         <module name="qa-base-project" />
         <module name="qa-automation-bases" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="qa-automation-base" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

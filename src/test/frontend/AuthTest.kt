@@ -1,10 +1,10 @@
-package test.frontend
+package frontend
 
 import io.kotest.matchers.booleans.shouldBeTrue
 import io.qameta.allure.*
-import main.frontend.helpers.BaseTest
-import main.frontend.elements.AuthElem
-import main.frontend.pages.AuthPage
+import frontend.helpers.BaseTest
+import frontend.elements.AuthElem
+import frontend.pages.AuthPage
 import org.junit.jupiter.api.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource

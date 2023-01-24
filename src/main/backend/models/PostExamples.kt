@@ -1,4 +1,4 @@
-package main.backend.pojo
+package backend.models
 
 import io.qameta.allure.Step
 

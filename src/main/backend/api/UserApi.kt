@@ -1,6 +1,6 @@
-package main.backend.api
+package backend.api
 
-import main.backend.pojo.UserResponse
+import backend.models.UserResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
