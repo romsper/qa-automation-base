@@ -9,6 +9,8 @@ import org.junit.jupiter.api.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 
+// TODO This test doesn't work because VK.COM changed the UI
+
 @Feature("Authorization")
 @Story("Authorization")
 @Tags(Tag("auth"), Tag("regress"))
