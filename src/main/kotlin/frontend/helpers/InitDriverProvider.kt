@@ -30,9 +30,10 @@ open class InitDriverProvider : WebDriverProvider {
         return when (properties().browserName) { // Feel free to use System.getProperty instead of Properties
             "chrome" -> {
                 ChromeOptions().apply {
-                    setCapability("version", properties().browserVersion)
-                    setCapability("enableVNC", true)
-                    setCapability("acceptInsecureCerts", true)
+                    setCapability("browserVersion", properties().browserVersion)
+                    setCapability("selenoid:options",
+                        mapOf("enableVNC" to true, "acceptInsecureCerts" to true))
+                    addArguments("--disable-gpu")
                 }
             }
             else -> throw Error("Browser is not defined")

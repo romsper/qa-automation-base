@@ -1,6 +1,6 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.8.0'
-    id 'io.qameta.allure' version '2.9.6'
+    id 'org.jetbrains.kotlin.jvm' version '1.8.21'
+    id 'io.qameta.allure' version '2.11.2'
     id 'java'
 }
 
@@ -14,10 +14,10 @@ repositories {
 
 allure {
     adapter.autoconfigure = true
-    version = '2.20.1'
+    version = '2.22.1'
 
     useJUnit5 {
-        version = '2.20.1'
+        version = '2.22.1'
     }
 }
 
@@ -41,28 +41,28 @@ test {
 }
 
 dependencies {
-    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: '1.8.0'
+    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: '1.8.21'
     implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.9.1'
 
     //JUnit
-    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.2'
-    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
-    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.9.2'
-    implementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.9.2'
+    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.3'
+    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.3'
+    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.9.3'
+    implementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.9.3'
 
     //Assert
-    implementation group: 'io.kotest', name: 'kotest-assertions-core-jvm', version: '5.5.4'
+    implementation group: 'io.kotest', name: 'kotest-assertions-core-jvm', version: '5.6.2'
 
     //Frontend
-    implementation group: 'com.codeborne', name: 'selenide', version: '6.11.1'
+    implementation group: 'com.codeborne', name: 'selenide', version: '6.15.0'
 
     //Backend
     implementation group: 'io.github.zawn.retrofit2', name: 'retrofit', version: '2.10.6'
     implementation group: 'io.github.zawn.retrofit2', name: 'converter-jackson', version: '2.10.6'
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.1'
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.1'
-    implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.14.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.15.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.1'
+    implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.15.1'
 
     //Report
-    implementation group: 'io.qameta.allure', name: 'allure-okhttp3', version: '2.20.1'
+    implementation group: 'io.qameta.allure', name: 'allure-okhttp3', version: '2.22.1'
 }
