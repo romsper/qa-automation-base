@@ -23,11 +23,11 @@ object RetrofitClient {
         .connectTimeout(timeout)
         .readTimeout(timeout)
         .writeTimeout(timeout)
-        .addInterceptor(AllureOkHttp3())
         .addInterceptor { chain: Interceptor.Chain ->
             val builder = chain.request().newBuilder()
             chain.proceed(builder.build())
         }
+        .addInterceptor(AllureOkHttp3())
         .build()
 
 
