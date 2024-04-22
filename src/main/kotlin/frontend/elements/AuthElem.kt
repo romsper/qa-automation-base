@@ -5,6 +5,8 @@ import com.codeborne.selenide.Selectors.byId
 import com.codeborne.selenide.Selenide.element
 import io.qameta.allure.Step
 
+// It might be any block on the page
+
 class AuthElem {
     private val inpEmail get() = element(byId("index_email"))
     private val inpPass get() = element(byId("index_pass"))
