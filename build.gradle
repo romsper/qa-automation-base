@@ -1,6 +1,6 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.9.23'
-    id 'io.qameta.allure' version '2.11.2'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+    id 'io.qameta.allure' version '2.12.0'
     id 'java'
 }
 
@@ -11,24 +11,15 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.25.0",
-    junitVersion = "5.10.2",
-    selenideVersion = '7.2.3',
-    retrofit2Version = '2.10.6',
-    slf4jVersionVersion = "2.17.0"
-
-allure {
-    adapter.autoconfigure = true
-    version = allureVersion
-
-    useJUnit5 {
-        version = allureVersion
+configurations {
+    agent {
+        canBeResolved = true
+        canBeConsumed = true
     }
-
 }
 
 test {
-    jvmArgs "-noverify"
+//    jvmArgs = [ "-javaagent:${configurations.agent.singleFile}", "-noverify" ]
     useJUnitPlatform {
         if (System.getProperty("TAGS")) {
             includeTags System.getProperty("TAGS")
@@ -43,8 +34,15 @@ test {
     systemProperties(System.getProperties())
 }
 
+def allureVersion = "2.29.0",
+    junitVersion = "5.11.0",
+    kotestVersion = "5.9.1",
+    selenideVersion = '7.4.2',
+    retrofit2Version = '2.11.0',
+    jacksonVersion = "2.17.2"
+
 dependencies {
-    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: '1.9.23'
+    agent "org.aspectj:aspectjweaver:1.9.22"
     implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.22'
 
     //JUnit
@@ -54,20 +52,22 @@ dependencies {
     implementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.10.2'
 
     //Assert
-    implementation group: 'io.kotest', name: 'kotest-assertions-core-jvm', version: '5.8.1'
+    implementation group: 'io.kotest', name: 'kotest-assertions-core-jvm', version: kotestVersion
 
     //Frontend
     implementation group: 'com.codeborne', name: 'selenide', version: selenideVersion
 
     //Backend
-    implementation group: 'io.github.zawn.retrofit2', name: 'retrofit', version: retrofit2Version
-    implementation group: 'io.github.zawn.retrofit2', name: 'converter-jackson', version: retrofit2Version
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: slf4jVersionVersion
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: slf4jVersionVersion
-    implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: slf4jVersionVersion
+    implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: retrofit2Version
+    implementation group: 'com.squareup.retrofit2', name: 'converter-jackson', version: retrofit2Version
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+    implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: jacksonVersion
 
     //Report
     implementation group: 'io.qameta.allure', name: 'allure-okhttp3', version: allureVersion
+    implementation group: 'io.qameta.allure', name: 'allure-junit5', version: allureVersion
+    implementation group: 'io.qameta.allure', name: 'allure-bom', version: allureVersion
 }
 
 compileKotlin {

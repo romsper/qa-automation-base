@@ -22,7 +22,6 @@ class AuthTest : BaseTest() {
     @Issue("JIRA-123") @TmsLink("TR-15")
     fun badAuthTest(email: String) {
         AuthPage()
-                .authElem()
                 .typeLoginAndPass(email = email, pass = "asdfg123")
                 .submitClick()
 
