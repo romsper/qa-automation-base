@@ -1,9 +1,9 @@
 package backend.base
 
+import backend.api.IApiInit
 import io.qameta.allure.Step
-import backend.base.ApiBase
 
-class UserBase: ApiBase {
+class UserBaseI: IApiInit {
 
     @Step("Get users")
     fun getUsers() = userApi.getUsers().execute()

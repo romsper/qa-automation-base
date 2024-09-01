@@ -1,10 +1,8 @@
-package backend.base
+package backend.api
 
-import backend.api.AuthApi
-import backend.api.UserApi
 import backend.helpers.RetrofitClient
 
-interface ApiBase {
+interface IApiInit {
     val authApi get() = RetrofitClient.createService(AuthApi::class.java)
     val userApi get() = RetrofitClient.createService(UserApi::class.java)
 }

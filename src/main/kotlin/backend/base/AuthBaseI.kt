@@ -1,11 +1,12 @@
 package backend.base
 
+import backend.api.IApiInit
 import backend.models.AuthRequestModel
 import backend.models.AuthResponseModel
 import io.qameta.allure.Step
 import retrofit2.Response
 
-class AuthBase: ApiBase {
+class AuthBaseI: IApiInit {
 
     @Step("Authorization: {email} | {password}")
     fun authorization(email: String, password: String): Response<AuthResponseModel> {

@@ -7,7 +7,7 @@ import io.qameta.allure.*
 import backend.extention.Functions.Companion.getAsObject
 import backend.extention.Functions.Companion.getErrorBody
 import backend.extention.Functions.Companion.jsonToObject
-import backend.interfaces.IUsers
+import backend.base.IBase
 import backend.models.ExampleName
 import org.junit.jupiter.api.*
 
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.*
 @Feature("User")
 @Story("getUsers")
 @Tags(Tag("user"), Tag("regress"))
-class UserTest : IUsers {
+class UserTest : IBase {
 
     @Test
     @Severity(SeverityLevel.BLOCKER)
