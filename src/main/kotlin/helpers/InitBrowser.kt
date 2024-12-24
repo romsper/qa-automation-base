@@ -11,12 +11,13 @@ class InitBrowser {
         try {
             val playwright = Playwright.create()
             val browser = when (System.getProperty("BROWSER_NAME", "chromium")) {
-                "chromium" -> playwright.
+                "chromium" -> playwright.chromium()
                 "firefox" -> playwright.firefox()
                 "webkit" -> playwright.webkit()
                 else -> throw RuntimeException("Wrong browser: ${System.getProperty("BROWSER_NAME")}")
             }
             browser.apply { launch(BrowserType.LaunchOptions()
+//                .setChannel("chrome") // blocks other browsers
                 .setSlowMo(500.0)
                 .setTimeout(30000.0)
                 .setHeadless(false))
