@@ -1,7 +1,7 @@
-package org.example.helpers
+package helpers
 
-import org.example.helpers.PlaywrightObject.browser
-import org.example.helpers.PlaywrightObject.page
+import helpers.PlaywrightObject.browser
+import helpers.PlaywrightObject.page
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeAll
@@ -9,9 +9,9 @@ import org.junit.jupiter.api.BeforeEach
 
 open class BaseTest {
 
-
     @BeforeEach
     fun openBrowser() {
+        browser?.contexts()?.forEach { it.clearCookies() }
     }
 
     @AfterEach

@@ -1,4 +1,4 @@
-package org.example.helpers
+package helpers
 
 import com.microsoft.playwright.Browser
 import com.microsoft.playwright.BrowserType
@@ -33,9 +33,8 @@ class InitBrowser {
     }
 }
 
+// Doesn't cool having nullable objects. Maybe JUnit Extension is better option...
 object PlaywrightObject {
     var browser: Browser? = null
     var page: Page? = null
 }
-
-
