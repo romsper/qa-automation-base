@@ -9,6 +9,8 @@ class InitBrowser {
 
     init {
         try {
+            System.setProperty("TEST_HOST", "https://qaplayground.dev")
+
             val playwright = Playwright.create()
             val browser = when (System.getProperty("BROWSER_NAME", "chromium")) {
                 "chromium" -> playwright.chromium()
@@ -23,7 +25,7 @@ class InitBrowser {
                 .setHeadless(false))
                 .run {
                     PlaywrightObject.page = this.newPage()
-                    PlaywrightObject.page?.navigate(System.getProperty("TEST_HOST", "https://google.com"))
+                    PlaywrightObject.page?.navigate(System.getProperty("TEST_HOST"))
                     PlaywrightObject.browser = this
                 }
             }

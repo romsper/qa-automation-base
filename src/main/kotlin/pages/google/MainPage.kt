@@ -1,4 +1,4 @@
-package pages
+package pages.google
 
 import com.microsoft.playwright.Keyboard
 import io.qameta.allure.Step

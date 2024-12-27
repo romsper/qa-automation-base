@@ -1,4 +1,4 @@
-package pages
+package pages.google
 
 import helpers.PlaywrightObject.page
 import io.qameta.allure.Step
