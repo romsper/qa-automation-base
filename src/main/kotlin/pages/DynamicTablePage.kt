@@ -17,6 +17,8 @@ class DynamicTablePage {
                 SuperheroObject(
                     name = it.name.innerText(),
                     email = it.email.innerText(),
+                    status = it.status.innerText(),
+                    realName = it.realName.innerText()
                 )
             }
     }
@@ -24,12 +26,17 @@ class DynamicTablePage {
 
 // This class is a wrapper for the locator of the item in the list
 // Similar bug in Playwright: https://github.com/microsoft/playwright/issues/12529
+// Reported in NEW issue: https://github.com/microsoft/playwright/issues/34147
 class Superhero(item: Locator) {
     val name = item.locator("xpath=.//div[@class='ml-4']/div[1]")
     val email = item.locator("xpath=.//div[@class='ml-4']/div[2]")
+    val status = item.locator("xpath=.//td[2]/span")
+    val realName = item.locator("xpath=.//td[3]/span")
 }
 
 data class SuperheroObject(
     val name: String,
-    val email: String
+    val email: String,
+    val status: String,
+    val realName: String,
 )

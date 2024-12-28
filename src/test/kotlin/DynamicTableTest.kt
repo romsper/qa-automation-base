@@ -11,6 +11,6 @@ class DynamicTableTest: BaseTest() {
             .open()
             .getSuperheroes().firstOrNull { it.name == "Spider-Man"}
 
-        spiderMan!!.name shouldBe "Spider-Man"
+        spiderMan!!.realName shouldBe "Peter Parker"
     }
 }
