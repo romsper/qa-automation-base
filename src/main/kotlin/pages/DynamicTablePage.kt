@@ -24,9 +24,6 @@ class DynamicTablePage {
     }
 }
 
-// This class is a wrapper for the locator of the item in the list
-// Similar bug in Playwright: https://github.com/microsoft/playwright/issues/12529
-// Reported in NEW issue: https://github.com/microsoft/playwright/issues/34147
 class Superhero(item: Locator) {
     val name = item.locator("xpath=.//div[@class='ml-4']/div[1]")
     val email = item.locator("xpath=.//div[@class='ml-4']/div[2]")
