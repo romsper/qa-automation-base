@@ -2,6 +2,7 @@ package pages
 
 import com.microsoft.playwright.Locator
 import helpers.PlaywrightObject.page
+import io.qameta.allure.Step
 
 class DynamicTablePage {
     private val listSuperheroes get() = page?.locator("//*[@id='tbody']/tr")?.all()
@@ -11,6 +12,7 @@ class DynamicTablePage {
         return this
     }
 
+    @Step("Get all Superheroes")
     fun getSuperheroes(): List<SuperheroObject> {
         return listSuperheroes!!.map { Superhero(it) }
             .map {
