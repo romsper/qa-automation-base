@@ -14,16 +14,13 @@ test.describe('Tags input box', () => {
         let maxTagsCount = await (await tagsInputBoxPage
             .removeAllTags())
             .getTagsCount()
-        console.log(maxTagsCount)
 
         let addedTags = await (await (await tagsInputBoxPage
             .addTag("Tag1"))
             .addTag("Tag2"))
             .getTags()
-        console.log(addedTags)
 
         let tagsCount = await tagsInputBoxPage.getTagsCount()
-        console.log(tagsCount)
 
         expect(addedTags.find(tag => tag.text === "Tag1")).toBeDefined()
         expect(addedTags.find(tag => tag.text === "Tag2")).toBeDefined()
