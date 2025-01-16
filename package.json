@@ -36,6 +36,7 @@
     "playwright": "^1.49.1",
     "allure-commandline": "^2.32.0",
     "allure-playwright": "3.0.7",
-    "experimental-allure-playwright": "^0.0.3"
+    "experimental-allure-playwright": "^0.0.3",
+    "axios": "^1.7.9"
   }
 }
