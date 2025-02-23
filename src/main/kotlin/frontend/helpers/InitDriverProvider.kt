@@ -13,7 +13,7 @@ import java.net.URL
 open class InitDriverProvider : WebDriverProvider {
 
     init {
-        Configuration.baseUrl = "https://vk.com"
+        Configuration.baseUrl = "https://simplewine.ru"
         Configuration.browserSize = "1366x768"
         Configuration.timeout = 15000
         Configuration.reopenBrowserOnFail = true
@@ -24,13 +24,13 @@ open class InitDriverProvider : WebDriverProvider {
 //        Configuration.fileDownload = FileDownloadMode.PROXY
     }
 
-    private var SELENOID_HUB_HOST = System.getProperty("SELENOID_HUB_HOST") ?:  "localhost"
+    private var SELENOID_HUB_HOST = System.getProperty("SELENOID_HUB_HOST", "localhost")
 
     override fun createDriver(capabilities: Capabilities): WebDriver {
         return when (properties().browserName) { // Feel free to use System.getProperty instead of Properties
             "chrome" -> {
                 ChromeOptions().apply {
-                    setCapability("browserVersion", properties().browserVersion)
+                    setCapability("browserVersion", properties().browserVersion) // Upgrade the browser version
                     setCapability("selenoid:options",
                         mapOf("enableVNC" to true, "acceptInsecureCerts" to true))
                     addArguments("--disable-gpu")

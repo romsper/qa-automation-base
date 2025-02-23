@@ -1,15 +1,13 @@
 package frontend.helpers
 
-import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selenide
-import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 
 open class BaseTest {
 
     init {
-        Configuration.browser = InitDriverProvider()::class.java.name
+        InitDriverProvider()
     }
 
     @BeforeEach
@@ -21,10 +19,5 @@ open class BaseTest {
     fun clearBrowser() {
         Selenide.clearBrowserCookies()
         Selenide.clearBrowserLocalStorage()
-    }
-
-    @AfterAll
-    fun closeBrowser() {
-        Selenide.closeWebDriver()
     }
 }
