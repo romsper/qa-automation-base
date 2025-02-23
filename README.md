@@ -10,7 +10,7 @@ This branch `kotlin-junit5-retrofit` is integrated into GHA -> It passes test re
 
 #### Branches
 
-  - [kotlin-junit5-retrofit](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-retrofit) - Kotlin | Retrofit | Selenide | JUnit 5 | Allure -> Updated `01.09.2024`
+  - [kotlin-junit5-retrofit](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-retrofit) - Kotlin | Retrofit | Selenide | JUnit 5 | Allure -> Updated `22.02.2025`
   - [kotlin-junit5-playwright](https://github.com/romsper/qa-automation-base/tree/kotlin-junit5-playwright) - Kotlin | Playwright | JUnit 5 | Allure -> Updated `31.12.2024`
   - [typescript-playwright-allure](https://github.com/romsper/qa-automation-bases/tree/typescript-playwright-allure) - TypeScript | Playwright | Allure -> Updated `31.12.2024`
   - [kotlin-junit5-appium](https://github.com/romsper/qa-automation-bases/tree/kotlin-junit5-appium) - Kotlin | Selenide/Appium | JUnit 5 | Allure | Allure EE | TestRail
